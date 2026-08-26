@@ -1,0 +1,27 @@
+# Secrets
+.env
+.env.*
+!.env.example
+
+# Dependencies and build output
+node_modules/
+src/your-web/build/
+src/your-web/dist/
+
+# Local agent settings + runtime state (personal, not shared in the template)
+.claude/settings.local.json
+.claude/scheduled_tasks.lock
+
+# Logs and caches
+*.log
+.cache/
+__pycache__/
+
+# Editors and OS
+.vscode/*
+!.vscode/tasks.json
+.idea/
+.DS_Store
+Thumbs.db
+*.swp
+*~

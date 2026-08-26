@@ -1,0 +1,15 @@
+{
+  "name": "open-pulse",
+  "displayName": "Open Pulse WebKit",
+  "description": "Build dashboards on the Open Pulse platform — a guided /open-pulse:new-dashboard wizard, query skills for Neo4j/SPARQL/OpenSearch/CHAOSS, the hub op-* skills, and the SDSC design-system skills.",
+  "version": "0.2.0",
+  "author": {
+    "name": "SDSC ORDES",
+    "url": "https://github.com/sdsc-ordes"
+  },
+  "homepage": "https://openpulse.science",
+  "repository": "https://github.com/sdsc-ordes/open-pulse-webkit",
+  "license": "Apache-2.0",
+  "keywords": ["open-pulse", "dashboard", "neo4j", "sparql", "opensearch", "chaoss", "sdsc"],
+  "skills": ["./.claude/skills"]
+}

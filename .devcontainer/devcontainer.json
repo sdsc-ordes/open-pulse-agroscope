@@ -1,0 +1,47 @@
+{
+  "name": "pulseWebKit",
+  "dockerComposeFile": "../tools/image/docker/docker-compose.yml",
+  "service": "web",
+  "workspaceFolder": "/workspaces/open-pulse-webkit",
+  "shutdownAction": "stopCompose",
+  "remoteUser": "node",
+  "features": {
+    "ghcr.io/devcontainers/features/common-utils:2": {},
+    "ghcr.io/devcontainers/features/github-cli:1": {},
+    "ghcr.io/anthropics/devcontainer-features/claude-code:1.0": {}
+  },
+  "mounts": [
+    "source=claude-code-config-${devcontainerId},target=/home/node/.claude,type=volume"
+  ],
+  "containerEnv": {
+    "CLAUDE_CONFIG_DIR": "/home/node/.claude",
+    "ANTHROPIC_API_KEY": "${localEnv:ANTHROPIC_API_KEY}"
+  },
+  "forwardPorts": [5173, 4173, 8931],
+  "portsAttributes": {
+    "5173": { "label": "Web app (dev server)", "onAutoForward": "notify" },
+    "4173": { "label": "Web app (preview)", "onAutoForward": "silent" },
+    "8931": { "label": "Playwright MCP sidecar", "onAutoForward": "silent" }
+  },
+  "postCreateCommand": "bash .devcontainer/post-create.sh",
+  "postStartCommand": "bash .devcontainer/post-start.sh",
+  "postAttachCommand": {
+    "hint": "echo 'Web app lives in src/your-web (scaffold it, then `cd src/your-web && npm run dev`).' && echo 'Playwright MCP: http://localhost:8931/mcp (sidecar).' && echo 'Claude Code: run `claude` to verify auth (first use triggers browser login; subsequent rebuilds reuse the persisted config volume).'",
+    "claude-auth-check": "claude config list > /dev/null 2>&1 && echo 'Claude: authenticated.' || echo 'Claude: not authenticated — run `claude` to log in.'"
+  },
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "anthropic.claude-code",
+        "esbenp.prettier-vscode",
+        "ms-playwright.playwright",
+        "eamodio.gitlens",
+        "ms-azuretools.vscode-docker",
+        "redhat.vscode-yaml"
+      ],
+      "settings": {
+        "task.allowAutomaticTasks": "on"
+      }
+    }
+  }
+}

@@ -1,0 +1,57 @@
+name: CI
+
+on:
+  push:
+    branches: [main, master]
+  pull_request:
+
+jobs:
+  agents-sync:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+      - name: Verify .agents/ mirror is in sync with .claude/
+        run: node tools/sync-agents.mjs --check
+
+  web:
+    runs-on: ubuntu-latest
+    # The app lives in src/your-web. This job runs once you've scaffolded it
+    # with a package.json + lockfile; adjust the commands to your tooling.
+    defaults:
+      run:
+        working-directory: src/your-web
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Check for a scaffolded app
+        id: app
+        working-directory: .
+        run: |
+          if [ -f src/your-web/package.json ]; then
+            echo "scaffolded=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "scaffolded=false" >> "$GITHUB_OUTPUT"
+            echo "::notice::src/your-web not scaffolded yet — skipping web build."
+          fi
+
+      - uses: actions/setup-node@v4
+        if: steps.app.outputs.scaffolded == 'true'
+        with:
+          node-version: "20"
+          cache: npm
+          cache-dependency-path: src/your-web/package-lock.json
+
+      - name: Install
+        if: steps.app.outputs.scaffolded == 'true'
+        run: npm ci
+
+      - name: Typecheck / lint
+        if: steps.app.outputs.scaffolded == 'true'
+        run: npm run check --if-present
+
+      - name: Build
+        if: steps.app.outputs.scaffolded == 'true'
+        run: npm run build --if-present

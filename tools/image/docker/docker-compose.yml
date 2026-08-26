@@ -1,0 +1,40 @@
+services:
+  web:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      # BuildKit's default provenance attestation produces a multi-manifest image;
+      # docker compose can resolve the wrong (attestation-only) entry from it,
+      # yielding a container with no users/files. Disable it for a plain image.
+      provenance: false
+    command: sleep infinity
+    volumes:
+      # Compose-based devcontainers do NOT auto-mount the workspace — mount the
+      # repo root (3 levels up from this file) at the devcontainer workspaceFolder.
+      - ../../..:/workspaces/open-pulse-webkit:cached
+    depends_on:
+      playwright-mcp:
+        condition: service_started
+    networks:
+      - pulsewebkit
+
+  playwright-mcp:
+    image: mcr.microsoft.com/playwright/mcp
+    init: true
+    ports:
+      - "8931:8931"
+    # The image's entrypoint is already `node /app/cli.js --headless --browser chromium
+    # --no-sandbox` — command must only append extra flags, not repeat the invocation.
+    command:
+      - --port
+      - "8931"
+      - --host
+      - "0.0.0.0"
+      - --allowed-origins
+      - "http://localhost:5173;http://localhost:4173;http://127.0.0.1:5173;http://127.0.0.1:4173"
+    networks:
+      - pulsewebkit
+
+networks:
+  pulsewebkit:
+    driver: bridge

@@ -1,0 +1,17 @@
+{
+  "name": "open-pulse",
+  "description": "Skills and guided scaffolding for building dashboards on the Open Pulse open-research-software observatory.",
+  "owner": {
+    "name": "SDSC ORDES",
+    "email": "contact@datascience.ch"
+  },
+  "plugins": [
+    {
+      "name": "open-pulse",
+      "source": "./",
+      "description": "Build dashboards on the Open Pulse platform — a guided /open-pulse:new-dashboard wizard, query skills for Neo4j/SPARQL/OpenSearch/CHAOSS, the hub op-* skills, and the SDSC design-system skills.",
+      "category": "data",
+      "keywords": ["open-pulse", "dashboard", "neo4j", "sparql", "opensearch", "chaoss", "sdsc"]
+    }
+  ]
+}

@@ -1,0 +1,9 @@
+{
+  "name": "pulse-webkit",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "check-connectivity": "node tools/check-connectivity.mjs",
+    "sync-agents": "node tools/sync-agents.mjs"
+  }
+}

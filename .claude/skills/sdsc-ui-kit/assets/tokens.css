@@ -1,0 +1,114 @@
+/* SDSC UI Design Kit — design tokens
+ * Brand values from SDSC_Design_System.pdf (datascience.ch Webflow production,
+ * June 2026). Groups marked "extension" are not in that PDF but are kept for
+ * app builds. Copy into the target project's global stylesheet; reference these
+ * variables (or the matching Tailwind theme keys) — never hard-code hex values.
+ *
+ * Signature radius rule: buttons / inputs / checkboxes / progress bars use
+ * 0.25rem (4px). Tags use a fully-rounded 2rem pill; the nav dark-mode toggle
+ * is circular. These are the only radii in the system.
+ */
+
+:root {
+  /* Fonts */
+  --font-heading: "Space Grotesk", system-ui, sans-serif; /* H1–H6, weight 500–600 */
+  --font-body: "Switzer", system-ui, sans-serif;          /* body, UI, buttons, weight 400 */
+  --font-size: 16px;
+
+  /* Brand — PDF §2 */
+  --primary-color: #5561a6;   /* CTAs, links, active states, brand accents */
+  --secondary-color: #26235c; /* dark backgrounds, headings on light */
+  --light-blue: var(--primary-color);   /* kit alias */
+  --dark-blue: var(--secondary-color);  /* kit alias */
+
+  /* Brand tint/shade scales (extension) */
+  --dark-blue-lighter: #4a4889;
+  --dark-blue-light: #383673;
+  --dark-blue-dark: #1e1c4a;
+  --dark-blue-darker: #161438;
+  --light-blue-lighter: #8a94c9;
+  --light-blue-light: #6f7ab8;
+  --light-blue-dark: #434e85;
+  --light-blue-darker: #323b64;
+
+  /* Green accent (extension — not in the PDF; reserve for accent emphasis) */
+  --green: #90ca42;
+  --green-lighter: #b8e186;
+  --green-light: #a4d564;
+  --green-dark: #73a235;
+  --green-darker: #567928;
+
+  /* Backgrounds, text & borders — PDF §2 */
+  --background-color-black: #101010;     /* dark sections */
+  --background-color-grey: #f4f3f8;      /* card / alt-section surface */
+  --background-color-white: #ffffff;
+  --text-color-black: #000000;
+  --text-color-grey: #848484;            /* secondary text, labels, icons */
+  --text-color-navbar-overlay: #cccccc;  /* nav text on dark overlay */
+  --color-border-2: #c9c9c9;             /* dividers, input borders, table lines */
+
+  --grey: var(--text-color-grey);        /* kit alias */
+  --light-blue-bg: #dddeec;    /* banners, highlighted areas (extension) */
+  --black: #000000;
+  --white: #ffffff;
+
+  /* Surface scale (extension — inert fills: tracks, disabled backgrounds) */
+  --surface-50: #fafafa;
+  --surface-100: #f5f5f5;
+  --surface-200: #e5e5e5;
+  --surface-300: #d4d4d4;
+  --surface-400: #a3a3a3;
+  --surface-500: #737373;
+  --surface-600: #525252;
+  --surface-700: #404040;
+  --surface-800: #262626;
+  --surface-900: #171717;
+
+  /* Semantic (extension — status / feedback) */
+  --success: #10b981;
+  --warning: #f59e0b;
+  --error: #ef4444;
+  --info: #3b82f6;
+
+  /* Roles */
+  --background: var(--background-color-white);
+  --foreground: var(--text-color-black);
+  --card: var(--background-color-white);
+  --primary: var(--primary-color);
+  --primary-hover: var(--secondary-color);
+  --accent: var(--green);
+  --border: var(--color-border-2);       /* #c9c9c9 — PDF divider/input border */
+  --muted-foreground: var(--text-color-grey);
+  --link: var(--primary-color);
+  --link-hover: var(--secondary-color);
+
+  /* Radius — the SDSC signature */
+  --radius-button: 0.25rem;  /* 4px — slightly rounded, not square */
+  --radius-input: 0.25rem;   /* 4px — inputs, checkboxes, progress bars */
+  --radius-pill: 2rem;       /* tags / badges — fully rounded */
+
+  /* Spacing — rem-based t-shirt scale on a 16px base (PDF §4) */
+  --space-tiny: 0.125rem;    /* 2px  */
+  --space-xsmall: 0.5rem;    /* 8px  */
+  --space-small: 1rem;       /* 16px */
+  --space-custom1: 1.5rem;   /* 24px */
+  --space-medium: 2rem;      /* 32px */
+  --space-custom2: 2.5rem;   /* 40px — also the global page gutter */
+  --space-large: 3rem;       /* 48px — section padding (small) */
+  --space-custom3: 3.5rem;   /* 56px */
+  --space-xlarge: 4rem;      /* 64px */
+  --space-xxlarge: 5rem;     /* 80px */
+  --space-huge: 6rem;        /* 96px */
+  --space-xhuge: 8rem;       /* 128px — section padding (large) */
+  --space-xxhuge: 12rem;     /* 192px */
+}
+
+.dark {
+  --background: #1a1a1a;
+  --foreground: var(--white);
+  --card: #2d2d2d;
+  --border: var(--surface-700);   /* #404040 */
+  --muted-foreground: var(--surface-300); /* #d4d4d4 */
+  --link: #93c5fd;
+  --link-hover: var(--white);
+}
