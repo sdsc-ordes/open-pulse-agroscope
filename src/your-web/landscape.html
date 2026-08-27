@@ -34,40 +34,27 @@
         <p class="kicker">Theme 1 — The Landscape</p>
         <h1>What open source exists at Agroscope?</h1>
         <p class="lede" id="lede">Loading…</p>
-      </div>
-    </section>
-
-    <section class="section" style="padding-top:0">
-      <div class="wrap">
-        <p class="small muted" style="max-width:720px">
-          <strong style="color:var(--op-text)">Framing choice:</strong> all repository types are shown here —
+        <p class="small muted mt-24" style="max-width:720px">
+          <strong style="color:var(--op-text)">Framing choice:</strong> all repository types are shown —
           Software, Data and any others — with Software emphasized in the default sort and headline counts,
-          since it's the majority of what Agroscope publishes. Switch the type filter below to see everything.
+          since it's the majority of what Agroscope publishes.
         </p>
-
-        <div class="filter-bar mt-24">
-          <input type="search" id="f-search" placeholder="Search repositories…" aria-label="Search repositories" />
-          <select id="f-type" aria-label="Filter by type"><option value="">All types</option></select>
-          <select id="f-license" aria-label="Filter by license"><option value="">All licenses</option></select>
-          <select id="f-discipline" aria-label="Filter by discipline"><option value="">All disciplines</option></select>
-          <span class="filter-count" id="f-count"></span>
-        </div>
-
-        <div class="card-grid" id="repo-grid"></div>
-        <div id="landscape-provenance"></div>
       </div>
     </section>
+
+    <div class="wrap" id="landscape-by-org"></div>
   </main>
 
   <footer class="op-footer">
     <div class="wrap">
       <div class="op-footer-top">
         <div class="op-footer-desc">
-          This dashboard tells the open-source story of Agroscope
-          (<span class="mono">github.com/agroscope-ch</span>), built on the Open Pulse platform.
+          This dashboard tells the open-source story of Agroscope across its GitHub orgs —
+          <span class="mono">agroscope-ch</span> and <span class="mono">EOA-team</span> — built on the Open Pulse platform.
         </div>
         <div class="op-footer-links">
-          <a href="https://github.com/agroscope-ch" target="_blank" rel="noopener">GitHub org →</a>
+          <a href="https://github.com/agroscope-ch" target="_blank" rel="noopener">agroscope-ch →</a>
+          <a href="https://github.com/EOA-team" target="_blank" rel="noopener">EOA-team →</a>
           <a href="https://ror.org/04d8ztx87" target="_blank" rel="noopener">ROR record →</a>
           <a href="https://openpulse.science" target="_blank" rel="noopener">Open Pulse →</a>
         </div>

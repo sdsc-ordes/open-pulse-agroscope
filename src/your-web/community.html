@@ -37,49 +37,19 @@
       </div>
     </section>
 
-    <section class="section" style="padding-top:0">
-      <div class="wrap">
-        <div class="gap-item">
-          <span class="icon" aria-hidden="true">ⓘ</span>
-          <div>
-            <div class="title">Why no collaboration graph here</div>
-            <div class="detail">
-              The reference dashboard structure leads this theme with a force-directed collaboration graph.
-              For Agroscope that graph would be near-useless: only 23 unique contributors exist org-wide, and
-              17 of 20 repositories have exactly one contributor — there's barely any cross-repo collaboration
-              to visualise. We show a contributor table instead. Neo4j also has no institutional-affiliation
-              graph for Agroscope (no <code class="mono">RorOrg</code> node, no <code class="mono">AFFILIATED_WITH</code>
-              edges), so a "who works in which group" view isn't buildable from the graph as it stands — tracked
-              in <a href="coverage.html">What's missing</a>.
-            </div>
-          </div>
-        </div>
-
-        <div class="stat-grid" id="stat-grid" style="margin-top:32px"></div>
-
-        <h3 class="mt-48">Contributors by repository</h3>
-        <div class="op-table-wrap mt-16">
-          <table class="op-table" id="contrib-table">
-            <thead>
-              <tr><th>Repository</th><th>Contributors</th><th>Commits</th><th>Fork</th></tr>
-            </thead>
-            <tbody></tbody>
-          </table>
-        </div>
-        <div id="community-provenance"></div>
-      </div>
-    </section>
+    <div class="wrap" id="community-by-org"></div>
   </main>
 
   <footer class="op-footer">
     <div class="wrap">
       <div class="op-footer-top">
         <div class="op-footer-desc">
-          This dashboard tells the open-source story of Agroscope
-          (<span class="mono">github.com/agroscope-ch</span>), built on the Open Pulse platform.
+          This dashboard tells the open-source story of Agroscope across its GitHub orgs —
+          <span class="mono">agroscope-ch</span> and <span class="mono">EOA-team</span> — built on the Open Pulse platform.
         </div>
         <div class="op-footer-links">
-          <a href="https://github.com/agroscope-ch" target="_blank" rel="noopener">GitHub org →</a>
+          <a href="https://github.com/agroscope-ch" target="_blank" rel="noopener">agroscope-ch →</a>
+          <a href="https://github.com/EOA-team" target="_blank" rel="noopener">EOA-team →</a>
           <a href="https://ror.org/04d8ztx87" target="_blank" rel="noopener">ROR record →</a>
           <a href="https://openpulse.science" target="_blank" rel="noopener">Open Pulse →</a>
         </div>

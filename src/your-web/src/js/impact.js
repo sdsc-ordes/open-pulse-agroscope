@@ -1,39 +1,33 @@
 import impact from '../data/impact.json';
-import { provenance, fmtDate } from './components.js';
+import { provenance, fmtDate, orgSectionHeading } from './components.js';
+import { renderFunnel } from './lib/funnel.js';
 
 document.getElementById('lede').textContent =
-  'Whether Agroscope\'s open-source software is recognised in scholarly output — right now, the honest ' +
-  'answer is "not yet linked". Here is exactly where that chain breaks.';
+  'Whether each team\'s open-source software is recognised in scholarly output — shown per org, since the ' +
+  'funnel shape (repo counts, license coverage) differs enough between them that a blended funnel would ' +
+  'misrepresent both.';
 
-const steps = [
-  { label: 'Repositories', value: impact.funnel.repositories },
-  { label: 'With a declared license', value: impact.funnel.withLicense },
-  { label: 'With contributors identified', value: impact.funnel.withContributorsIdentified },
-  { label: 'Linked to a publication', value: impact.funnel.publicationLinksResolved },
-];
-const max = Math.max(...steps.map((s) => s.value), 1);
+const container = document.getElementById('impact-by-org');
+container.innerHTML = impact.scope.orgs
+  .map(
+    (org) => `
+    <section class="org-section" id="${org.slug}">
+      ${orgSectionHeading(org)}
+      <div id="${org.slug}-funnel" class="mt-32"></div>
+      <div id="${org.slug}-impact-provenance"></div>
+    </section>
+  `,
+  )
+  .join('');
 
-document.getElementById('funnel').innerHTML = `
-  <div style="display:flex;flex-direction:column;gap:12px;max-width:640px">
-    ${steps
-      .map(
-        (s) => `
-      <div>
-        <div class="flex-between micro muted"><span>${s.label}</span><span class="mono">${s.value}</span></div>
-        <div style="height:28px;background:var(--op-surface-2);border:1px solid var(--op-border);margin-top:4px">
-          <div style="height:100%;width:${Math.max(2, (s.value / max) * 100)}%;background:${s.value === 0 ? 'var(--op-error)' : 'var(--op-blue)'}"></div>
-        </div>
-      </div>
-    `,
-      )
-      .join('')}
-  </div>
-  ${impact.note ? `<p class="small mt-24" style="max-width:640px;color:var(--op-text-2)">${impact.note}</p>` : ''}
-`;
+for (const org of impact.scope.orgs) {
+  const orgImpact = impact.perOrg[org.slug];
+  renderFunnel(`${org.slug}-funnel`, orgImpact.funnel, orgImpact.note);
 
-document.getElementById('impact-provenance').innerHTML = provenance({
-  source: 'SPARQL / Oxigraph (schema:sourceOrganization), Zenodo + Infoscience collections',
-  method: 'Direct query against the Agroscope ROR record, plus a full-text "agroscope" search across publication collections',
-  refresh: `Snapshot taken ${fmtDate(impact.fetchedAt)}`,
-  caveats: 'Absence of a link does not mean absence of publications — it means no ORCID / DOI / CITATION.cff chain currently connects the two in the data Open Pulse has extracted.',
-});
+  document.getElementById(`${org.slug}-impact-provenance`).innerHTML = provenance({
+    source: 'SPARQL / Oxigraph (schema:sourceOrganization), Zenodo + Infoscience collections',
+    method: 'Direct query against this org\'s explicit repo-URL list, plus a full-text "agroscope" search across publication collections',
+    refresh: `Snapshot taken ${fmtDate(impact.fetchedAt)}`,
+    caveats: 'Absence of a link does not mean absence of publications — it means no ORCID / DOI / CITATION.cff chain currently connects the two in the data Open Pulse has extracted.',
+  });
+}

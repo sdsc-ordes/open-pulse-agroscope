@@ -1,11 +1,15 @@
 #!/usr/bin/env node
 /* Build-time data snapshot for the Agroscope Open Source Dashboard.
  *
- * Resolves the scope (GitHub org `agroscope-ch`, ROR https://ror.org/04d8ztx87)
- * against Neo4j, SPARQL (Oxigraph), OpenSearch and the CHAOSS metrics API using
- * the same HTTP transports as the `query-*` skill scripts, and writes typed
- * JSON snapshots into src/data/. Credentials stay here, at build time — the
- * browser only ever reads the JSON files this script writes.
+ * Resolves the scope — every GitHub org in ORGS below, currently
+ * `agroscope-ch` and `EOA-team` (an Agroscope-affiliated research group) —
+ * against Neo4j, SPARQL (Oxigraph), OpenSearch and the CHAOSS metrics API
+ * using the same HTTP transports as the `query-*` skill scripts, and writes
+ * typed JSON snapshots into src/data/. Credentials stay here, at build time —
+ * the browser only ever reads the JSON files this script writes.
+ *
+ * Every repo carries an `org` field so pages can render either the combined
+ * Agroscope view or a single org's dedicated page from the same snapshots.
  *
  * Usage: npm run fetch-data   (from src/your-web/)
  */
@@ -17,8 +21,10 @@ import { fileURLToPath } from 'node:url';
 const HERE = dirname(fileURLToPath(import.meta.url));
 const OUT_DIR = join(HERE, '..', 'src', 'data');
 
-const ORG_SLUG = 'agroscope-ch';
-const ORG_URL = `https://github.com/${ORG_SLUG}`;
+const ORGS = [
+  { slug: 'agroscope-ch', displayName: 'Agroscope', url: 'https://github.com/agroscope-ch' },
+  { slug: 'EOA-team', displayName: 'EOA Team', url: 'https://github.com/EOA-team' },
+];
 const ROR_ID = 'https://ror.org/04d8ztx87';
 const ROR_NAME = 'Agroscope';
 
@@ -132,6 +138,10 @@ function sleep(ms) {
   return new Promise((resolve) => setTimeout(resolve, ms));
 }
 
+function sparqlValuesList(urls) {
+  return urls.map((u) => `<${u}>`).join(' ');
+}
+
 /* ---------------- main ---------------- */
 
 async function main() {
@@ -144,26 +154,38 @@ async function main() {
   }
   await mkdir(OUT_DIR, { recursive: true });
   const fetchedAt = new Date().toISOString();
-
-  /* ---- 1. Resolve scope: repos owned by the agroscope-ch GitHub org ---- */
-  console.log('1/6 Neo4j — repo inventory + contributor counts…');
-  const neo4jRepos = await neo4j(`
-    MATCH (o:Org)-[:OWNS]->(r:Repo)
-    WHERE o.url CONTAINS '${ORG_URL}' OR o.login CONTAINS '${ORG_URL}'
-    OPTIONAL MATCH (u:User)-[:CONTRIBUTES_TO]->(r)
-    WITH r, count(DISTINCT u) AS contributors
-    OPTIONAL MATCH (r)-[:FORK_OF]->(upstream)
-    RETURN r.name AS name, r.full_name AS url, contributors, upstream.full_name AS forkOf
-    ORDER BY r.name
-  `);
-  console.log(`  ${neo4jRepos.length} repos in Neo4j (${neo4jRepos.filter((r) => r.forkOf).length} forks)`);
-
-  /* ---- 2. SPARQL: type / license / language / stars / forks / discipline ---- */
-  console.log('2/6 SPARQL — metadata (type, license, language, discipline)…');
   const OP = 'PREFIX op: <https://open-pulse.epfl.ch/ontology#>\nPREFIX gme: <https://openpulse.science/git-metadata-extractor#>\n';
+
+  /* ---- 1. Resolve scope: repos owned by each org in ORGS ---- */
+  console.log(`1/6 Neo4j — repo inventory + contributor counts for ${ORGS.length} orgs…`);
+  let neo4jRepos = [];
+  for (const org of ORGS) {
+    const rows = await neo4j(`
+      MATCH (o:Org)-[:OWNS]->(r:Repo)
+      WHERE o.url CONTAINS '${org.url}' OR o.login CONTAINS '${org.url}'
+      OPTIONAL MATCH (u:User)-[:CONTRIBUTES_TO]->(r)
+      WITH r, count(DISTINCT u) AS contributors
+      OPTIONAL MATCH (r)-[:FORK_OF]->(upstream)
+      RETURN r.name AS name, r.full_name AS url, contributors, upstream.full_name AS forkOf
+      ORDER BY r.name
+    `);
+    console.log(`  ${org.slug}: ${rows.length} repos (${rows.filter((r) => r.forkOf).length} forks)`);
+    neo4jRepos = neo4jRepos.concat(rows.map((r) => ({ ...r, org: org.slug })));
+  }
+  console.log(`  ${neo4jRepos.length} repos total across ${ORGS.length} orgs`);
+
+  /* ---- 2. SPARQL: type / license / language / stars / forks / discipline ----
+   * Queried by explicit VALUES list of repo URIs (from Neo4j), not op:ownedBy —
+   * agroscope-ch resolves ownedBy to the Agroscope ROR, but EOA-team (not a
+   * registered ROR institution) only resolves ownedBy to its own GitHub org
+   * URL. A VALUES list works uniformly for any org regardless of what, if
+   * anything, its ownedBy predicate points to. */
+  console.log('2/6 SPARQL — metadata (type, license, language, discipline)…');
+  const allUrls = neo4jRepos.map((r) => r.url);
+  const values = sparqlValuesList(allUrls);
   const meta = await sparql(`${OP}
     SELECT ?repo ?type ?license ?lang ?stars ?forks ?archived WHERE {
-      ?repo op:ownedBy <${ROR_ID}> .
+      VALUES ?repo { ${values} }
       OPTIONAL { ?repo op:repositoryType ?type }
       OPTIONAL { ?repo gme:license_name ?license }
       OPTIONAL { ?repo gme:primary_language ?lang }
@@ -174,11 +196,11 @@ async function main() {
   `);
   const disciplineRows = await sparql(`${OP}
     SELECT ?repo ?discipline WHERE {
-      ?repo op:ownedBy <${ROR_ID}> .
+      VALUES ?repo { ${values} }
       ?repo op:discipline ?discipline .
     }
   `);
-  console.log(`  ${meta.length} repos resolve op:ownedBy the Agroscope ROR; ${disciplineRows.length} discipline links`);
+  console.log(`  ${meta.length} repos resolved metadata; ${disciplineRows.length} discipline links`);
 
   const disciplinesByRepo = new Map();
   for (const row of disciplineRows) {
@@ -199,7 +221,7 @@ async function main() {
     return {
       name: r.name,
       url: r.url,
-      org: ORG_SLUG,
+      org: r.org,
       type: m.type ? m.type.split('#').pop() : null,
       license: m.license ?? null,
       language: m.lang ?? null,
@@ -213,21 +235,26 @@ async function main() {
     };
   });
 
-  /* ---- 4. OpenSearch — commit activity for these exact repos ----
-   * Deliberately scoped to the 20 agroscope-ch repos by explicit URL, NOT the
-   * GrimoireLab `project = agroscope` tag — that tag also pulls in ~26 repos
-   * from the unrelated `EOA-team` GitHub org (a different scope), which would
-   * silently inflate every activity number. See DASHBOARD.md's reconnaissance
-   * table for this trap. */
-  console.log('3/6 OpenSearch — commit activity for the 20 agroscope-ch repos…');
-  const repoList = repos.map((r) => `'${r.url}'`).join(',');
+  /* ---- 4. OpenSearch — commit activity, per repo and per org ----
+   * Deliberately scoped to these exact repo URLs, NOT the broader GrimoireLab
+   * `project = agroscope` tag — that tag also pulls in a stray unrelated repo
+   * (jgustavsen/testgit) alongside the real EOA-team ones. Forks are excluded
+   * from every activity aggregate (SKILLS.md §9: a fork can carry the whole
+   * upstream history and inflate commit counts) — they stay in the catalogue,
+   * badged, but never in a monthly series, total, or per-repo growth chart. */
+  console.log('3/6 OpenSearch — commit activity…');
+  const nonForkUrls = repos.filter((r) => !r.isFork).map((r) => r.url);
+  const repoList = nonForkUrls.map((u) => `'${u}'`).join(',');
   const commitRows = await openSearchSql(
     `SELECT commit_date, repo_name, Author_uuid FROM git_demo_enriched WHERE repo_name IN (${repoList})`,
   );
-  console.log(`  ${commitRows.length} commits, ${new Set(commitRows.map((c) => c.Author_uuid)).size} unique authors`);
+  console.log(`  ${commitRows.length} commits (forks excluded), ${new Set(commitRows.map((c) => c.Author_uuid)).size} unique authors`);
 
+  const urlToOrg = new Map(repos.map((r) => [r.url, r.org]));
   const commitsByRepo = new Map();
   const monthly = new Map();
+  const monthlyByOrg = new Map(ORGS.map((o) => [o.slug, new Map()]));
+  const authorsByOrg = new Map(ORGS.map((o) => [o.slug, new Set()]));
   let minDate = null;
   let maxDate = null;
   for (const c of commitRows) {
@@ -238,13 +265,21 @@ async function main() {
     const month = date.slice(0, 7);
     monthly.set(month, (monthly.get(month) ?? 0) + 1);
     commitsByRepo.set(c.repo_name, (commitsByRepo.get(c.repo_name) ?? 0) + 1);
+    const org = urlToOrg.get(c.repo_name);
+    if (org) {
+      const orgMonthly = monthlyByOrg.get(org);
+      orgMonthly.set(month, (orgMonthly.get(month) ?? 0) + 1);
+      authorsByOrg.get(org).add(c.Author_uuid);
+    }
   }
   for (const r of repos) r.commits = commitsByRepo.get(r.url) ?? 0;
-  const monthlySeries = [...monthly.entries()].sort(([a], [b]) => a.localeCompare(b)).map(([month, count]) => ({ month, count }));
+  const toSeries = (m) => [...m.entries()].sort(([a], [b]) => a.localeCompare(b)).map(([month, count]) => ({ month, count }));
+  const monthlySeries = toSeries(monthly);
+  const perOrgMonthlySeries = Object.fromEntries(ORGS.map((o) => [o.slug, toSeries(monthlyByOrg.get(o.slug))]));
   const uniqueAuthors = new Set(commitRows.map((c) => c.Author_uuid)).size;
 
-  /* ---- 5. CHAOSS — curated metrics for the top repos by commit volume ---- */
-  console.log('4/6 CHAOSS — curated metrics for the 6 most active repos…');
+  /* ---- 5. CHAOSS — curated metrics for the top repos, per org ---- */
+  console.log('4/6 CHAOSS — curated metrics for the top 4 repos per org…');
   const CHAOSS_METRICS = [
     { slug: 'contributors', bucket: 'Community' },
     { slug: 'new_contributors', bucket: 'Community' },
@@ -253,43 +288,80 @@ async function main() {
     { slug: 'project_popularity', bucket: 'Popularity' },
     { slug: 'licenses_declared', bucket: 'Quality' },
   ];
-  const topRepos = [...repos].sort((a, b) => b.commits - a.commits).slice(0, 6).filter((r) => r.commits > 0);
-  const chaossByRepo = {};
-  for (const r of topRepos) {
-    chaossByRepo[r.name] = {};
-    for (const m of CHAOSS_METRICS) {
-      try {
-        const data = await chaoss(`/api/v1/metrics/chaoss/repositories/github.com/${ORG_SLUG}/${r.name}/metrics/${m.slug}`);
-        chaossByRepo[r.name][m.slug] = { bucket: m.bucket, ...data };
-      } catch (e) {
-        console.warn(`  ! chaoss ${r.name}/${m.slug}: ${e.message}`);
+  const chaossByOrg = {};
+  for (const org of ORGS) {
+    const topRepos = repos
+      .filter((r) => r.org === org.slug && r.commits > 0)
+      .sort((a, b) => b.commits - a.commits)
+      .slice(0, 4);
+    chaossByOrg[org.slug] = {};
+    for (const r of topRepos) {
+      chaossByOrg[org.slug][r.name] = {};
+      for (const m of CHAOSS_METRICS) {
+        try {
+          const data = await chaoss(`/api/v1/metrics/chaoss/repositories/github.com/${org.slug}/${r.name}/metrics/${m.slug}`);
+          chaossByOrg[org.slug][r.name][m.slug] = { bucket: m.bucket, ...data };
+        } catch (e) {
+          console.warn(`  ! chaoss ${org.slug}/${r.name}/${m.slug}: ${e.message}`);
+        }
+        await sleep(120);
       }
-      await sleep(120);
     }
+    console.log(`  ${org.slug}: fetched CHAOSS metrics for ${Object.keys(chaossByOrg[org.slug]).length} repos`);
   }
-  console.log(`  fetched CHAOSS metrics for ${Object.keys(chaossByRepo).length} repos`);
 
   /* ---- 6. Impact funnel + coverage gaps ---- */
   console.log('5/6 Research Impact — publication-link check…');
   const impactCheck = await sparql(`${OP}
     SELECT ?repo ?pub WHERE {
-      ?repo op:ownedBy <${ROR_ID}> .
+      VALUES ?repo { ${values} }
       ?repo <http://schema.org/sourceOrganization> ?pub .
     }
   `);
   console.log(`  ${impactCheck.length} publication links found (funnel step)`);
+  const pubLinksByOrg = new Map(ORGS.map((o) => [o.slug, 0]));
+  for (const row of impactCheck) {
+    const org = urlToOrg.get(row.repo);
+    if (org) pubLinksByOrg.set(org, (pubLinksByOrg.get(org) ?? 0) + 1);
+  }
 
   console.log('6/6 Coverage gaps…');
   const noLicense = repos.filter((r) => !r.license && !r.isFork);
   const noDiscipline = repos.filter((r) => r.disciplines.length === 0);
   const unclassifiedType = repos.filter((r) => !r.type);
+  const toGapEntry = (r) => ({ org: r.org, name: r.name });
 
   const disciplineCounts = new Map();
   for (const r of repos) for (const d of r.disciplines) disciplineCounts.set(d, (disciplineCounts.get(d) ?? 0) + 1);
 
+  const perOrgSummary = Object.fromEntries(
+    ORGS.map((org) => {
+      const orgRepos = repos.filter((r) => r.org === org.slug);
+      const orgDisciplines = new Map();
+      for (const r of orgRepos) for (const d of r.disciplines) orgDisciplines.set(d, (orgDisciplines.get(d) ?? 0) + 1);
+      return [
+        org.slug,
+        {
+          displayName: org.displayName,
+          url: org.url,
+          repoCount: orgRepos.length,
+          softwareCount: orgRepos.filter((r) => r.type === 'Software').length,
+          forkCount: orgRepos.filter((r) => r.isFork).length,
+          contributorCount: authorsByOrg.get(org.slug).size,
+          disciplineCount: orgDisciplines.size,
+          commitCount: orgRepos.reduce((sum, r) => sum + r.commits, 0),
+          publicationLinks: pubLinksByOrg.get(org.slug) ?? 0,
+          disciplines: [...orgDisciplines.entries()].sort((a, b) => b[1] - a[1]).map(([label, count]) => ({ label, count })),
+        },
+      ];
+    }),
+  );
+
+  const scope = { orgs: ORGS, ror: ROR_ID, rorName: ROR_NAME };
+
   const summary = {
     fetchedAt,
-    scope: { org: ORG_SLUG, orgUrl: ORG_URL, ror: ROR_ID, rorName: ROR_NAME },
+    scope,
     repoCount: repos.length,
     softwareCount: repos.filter((r) => r.type === 'Software').length,
     forkCount: repos.filter((r) => r.isFork).length,
@@ -299,59 +371,81 @@ async function main() {
     activitySpan: { from: minDate, to: maxDate },
     publicationLinks: impactCheck.length,
     disciplines: [...disciplineCounts.entries()].sort((a, b) => b[1] - a[1]).map(([label, count]) => ({ label, count })),
+    perOrg: perOrgSummary,
   };
 
   const health = {
     fetchedAt,
-    scope: summary.scope,
+    scope,
     monthlySeries,
+    perOrgMonthlySeries,
     activitySpan: summary.activitySpan,
     totalCommits: commitRows.length,
     uniqueAuthors,
     perRepo: repos
-      .map((r) => ({ name: r.name, url: r.url, commits: r.commits, contributors: r.contributors, isFork: r.isFork }))
+      .map((r) => ({ org: r.org, name: r.name, url: r.url, commits: r.commits, contributors: r.contributors, isFork: r.isFork }))
       .sort((a, b) => b.commits - a.commits),
-    chaoss: chaossByRepo,
+    chaoss: chaossByOrg,
   };
+
+  const impactNote = (pubCount) =>
+    pubCount === 0
+      ? 'No publication links currently resolve from any of these repositories to a scholarly record (checked schema:sourceOrganization across the SPARQL graph, plus a full-text "agroscope" search across Zenodo and Infoscience collections — zero matches). This is an identifier-coverage gap upstream (ORCID / CITATION.cff / DOI linkage), not a dashboard limitation.'
+      : null;
 
   const impact = {
     fetchedAt,
-    scope: summary.scope,
+    scope,
     funnel: {
       repositories: repos.length,
       withLicense: repos.filter((r) => r.license).length,
       withContributorsIdentified: repos.filter((r) => r.contributors > 0).length,
       publicationLinksResolved: impactCheck.length,
     },
-    note:
-      impactCheck.length === 0
-        ? 'No publication links currently resolve from any Agroscope repository to a scholarly record (checked schema:sourceOrganization against the Agroscope ROR across the SPARQL graph, plus a full-text "agroscope" search across Zenodo and Infoscience collections — zero matches). This is an identifier-coverage gap upstream (ORCID / CITATION.cff / DOI linkage), not a dashboard limitation.'
-        : null,
+    note: impactNote(impactCheck.length),
+    perOrg: Object.fromEntries(
+      ORGS.map((org) => {
+        const orgRepos = repos.filter((r) => r.org === org.slug);
+        const pubCount = pubLinksByOrg.get(org.slug) ?? 0;
+        return [
+          org.slug,
+          {
+            funnel: {
+              repositories: orgRepos.length,
+              withLicense: orgRepos.filter((r) => r.license).length,
+              withContributorsIdentified: orgRepos.filter((r) => r.contributors > 0).length,
+              publicationLinksResolved: pubCount,
+            },
+            note: impactNote(pubCount),
+          },
+        ];
+      }),
+    ),
   };
 
   const coverage = {
     fetchedAt,
-    scope: summary.scope,
+    scope,
     gaps: {
-      noLicense: noLicense.map((r) => r.name),
-      noDiscipline: noDiscipline.map((r) => r.name),
-      unclassifiedType: unclassifiedType.map((r) => r.name),
+      noLicense: noLicense.map(toGapEntry),
+      noDiscipline: noDiscipline.map(toGapEntry),
+      unclassifiedType: unclassifiedType.map(toGapEntry),
     },
     structural: [
       {
         title: 'No contributor–institution affiliation graph',
         detail:
-          'Neo4j has no RorOrg node for Agroscope and no AFFILIATED_WITH edges from its contributors — a "who works where" view cannot be built from the graph as it stands.',
+          'Neo4j has no RorOrg node for Agroscope and no AFFILIATED_WITH edges from contributors of either org — a "who works where" view cannot be built from the graph as it stands.',
       },
       {
-        title: 'No publication links to the Agroscope ROR',
-        detail: impact.note,
+        title: 'No publication links found',
+        detail: impactNote(impactCheck.length),
       },
     ],
   };
 
   await writeFile(join(OUT_DIR, 'summary.json'), JSON.stringify(summary, null, 2));
-  await writeFile(join(OUT_DIR, 'repos.json'), JSON.stringify({ fetchedAt, scope: summary.scope, repos }, null, 2));
+  await writeFile(join(OUT_DIR, 'repos.json'), JSON.stringify({ fetchedAt, scope, repos }, null, 2));
   await writeFile(join(OUT_DIR, 'health.json'), JSON.stringify(health, null, 2));
   await writeFile(join(OUT_DIR, 'impact.json'), JSON.stringify(impact, null, 2));
   await writeFile(join(OUT_DIR, 'coverage.json'), JSON.stringify(coverage, null, 2));
@@ -361,6 +455,10 @@ async function main() {
     `  repos=${summary.repoCount} software=${summary.softwareCount} contributors=${summary.contributorCount} ` +
       `disciplines=${summary.disciplineCount} commits=${summary.commitCount} pubLinks=${summary.publicationLinks}`,
   );
+  for (const org of ORGS) {
+    const s = perOrgSummary[org.slug];
+    console.log(`  ${org.slug}: repos=${s.repoCount} contributors=${s.contributorCount} commits=${s.commitCount}`);
+  }
 }
 
 main().catch((e) => {

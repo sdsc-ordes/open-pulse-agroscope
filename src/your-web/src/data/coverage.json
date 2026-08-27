@@ -1,46 +1,256 @@
 {
-  "fetchedAt": "2026-08-26T15:25:58.905Z",
+  "fetchedAt": "2026-08-27T14:44:48.468Z",
   "scope": {
-    "org": "agroscope-ch",
-    "orgUrl": "https://github.com/agroscope-ch",
+    "orgs": [
+      {
+        "slug": "agroscope-ch",
+        "displayName": "Agroscope",
+        "url": "https://github.com/agroscope-ch"
+      },
+      {
+        "slug": "EOA-team",
+        "displayName": "EOA Team",
+        "url": "https://github.com/EOA-team"
+      }
+    ],
     "ror": "https://ror.org/04d8ztx87",
     "rorName": "Agroscope"
   },
   "gaps": {
     "noLicense": [
-      "Agricultural_datasets",
-      "Esca-epidemiology",
-      "Irrigation",
-      "Rumex",
-      "TillerCounterGui",
-      "agroscope-ch.r-universe.dev",
-      "openfoodtox",
-      "sour-rot",
-      "sqlparser",
-      "swiss-fd-susceptibility",
-      "test",
-      "triact"
+      {
+        "org": "agroscope-ch",
+        "name": "Agricultural_datasets"
+      },
+      {
+        "org": "agroscope-ch",
+        "name": "Esca-epidemiology"
+      },
+      {
+        "org": "agroscope-ch",
+        "name": "Irrigation"
+      },
+      {
+        "org": "agroscope-ch",
+        "name": "Rumex"
+      },
+      {
+        "org": "agroscope-ch",
+        "name": "TillerCounterGui"
+      },
+      {
+        "org": "agroscope-ch",
+        "name": "agroscope-ch.r-universe.dev"
+      },
+      {
+        "org": "agroscope-ch",
+        "name": "openfoodtox"
+      },
+      {
+        "org": "agroscope-ch",
+        "name": "sour-rot"
+      },
+      {
+        "org": "agroscope-ch",
+        "name": "sqlparser"
+      },
+      {
+        "org": "agroscope-ch",
+        "name": "swiss-fd-susceptibility"
+      },
+      {
+        "org": "agroscope-ch",
+        "name": "test"
+      },
+      {
+        "org": "agroscope-ch",
+        "name": "triact"
+      },
+      {
+        "org": "EOA-team",
+        "name": ".github"
+      },
+      {
+        "org": "EOA-team",
+        "name": "026_dpa"
+      },
+      {
+        "org": "EOA-team",
+        "name": "AgriSatPy"
+      },
+      {
+        "org": "EOA-team",
+        "name": "DataInfrastructure"
+      },
+      {
+        "org": "EOA-team",
+        "name": "LAI_retrieval_model"
+      },
+      {
+        "org": "EOA-team",
+        "name": "PSPreprocessing"
+      },
+      {
+        "org": "EOA-team",
+        "name": "PhenomEn"
+      },
+      {
+        "org": "EOA-team",
+        "name": "ProSAIL_forward"
+      },
+      {
+        "org": "EOA-team",
+        "name": "SALI_models"
+      },
+      {
+        "org": "EOA-team",
+        "name": "SNAP_LAI"
+      },
+      {
+        "org": "EOA-team",
+        "name": "Satellite_monitoring_of_mountain_pastures"
+      },
+      {
+        "org": "EOA-team",
+        "name": "VegSeg"
+      },
+      {
+        "org": "EOA-team",
+        "name": "erosion_indicator"
+      },
+      {
+        "org": "EOA-team",
+        "name": "greentrack"
+      },
+      {
+        "org": "EOA-team",
+        "name": "project_template"
+      },
+      {
+        "org": "EOA-team",
+        "name": "rtm_inv"
+      }
     ],
     "noDiscipline": [
-      "Agricultural_datasets",
-      "agroscope-ch.r-universe.dev",
-      "derappp",
-      "graphoPy",
-      "sour-rot",
-      "sqlparser",
-      "srppp",
-      "test"
+      {
+        "org": "agroscope-ch",
+        "name": "Agricultural_datasets"
+      },
+      {
+        "org": "agroscope-ch",
+        "name": "agroscope-ch.r-universe.dev"
+      },
+      {
+        "org": "agroscope-ch",
+        "name": "derappp"
+      },
+      {
+        "org": "agroscope-ch",
+        "name": "graphoPy"
+      },
+      {
+        "org": "agroscope-ch",
+        "name": "sour-rot"
+      },
+      {
+        "org": "agroscope-ch",
+        "name": "sqlparser"
+      },
+      {
+        "org": "agroscope-ch",
+        "name": "srppp"
+      },
+      {
+        "org": "agroscope-ch",
+        "name": "test"
+      },
+      {
+        "org": "EOA-team",
+        "name": ".github"
+      },
+      {
+        "org": "EOA-team",
+        "name": "026_dpa"
+      },
+      {
+        "org": "EOA-team",
+        "name": "LAI_retrieval_model"
+      },
+      {
+        "org": "EOA-team",
+        "name": "PSPreprocessing"
+      },
+      {
+        "org": "EOA-team",
+        "name": "ProSAIL_forward"
+      },
+      {
+        "org": "EOA-team",
+        "name": "PyProSAIL"
+      },
+      {
+        "org": "EOA-team",
+        "name": "SALI_models"
+      },
+      {
+        "org": "EOA-team",
+        "name": "SNAP_LAI"
+      },
+      {
+        "org": "EOA-team",
+        "name": "Satellite_monitoring_of_mountain_pastures"
+      },
+      {
+        "org": "EOA-team",
+        "name": "VegSeg"
+      },
+      {
+        "org": "EOA-team",
+        "name": "eodal"
+      },
+      {
+        "org": "EOA-team",
+        "name": "eodal_notebooks"
+      },
+      {
+        "org": "EOA-team",
+        "name": "greentrack"
+      },
+      {
+        "org": "EOA-team",
+        "name": "interactive_plots"
+      },
+      {
+        "org": "EOA-team",
+        "name": "project_template"
+      },
+      {
+        "org": "EOA-team",
+        "name": "rtm_inv"
+      },
+      {
+        "org": "EOA-team",
+        "name": "s2toarup"
+      },
+      {
+        "org": "EOA-team",
+        "name": "sentinel2_crop_trait_timeseries"
+      },
+      {
+        "org": "EOA-team",
+        "name": "sentinel2_crop_traits"
+      }
     ],
     "unclassifiedType": []
   },
   "structural": [
     {
       "title": "No contributor–institution affiliation graph",
-      "detail": "Neo4j has no RorOrg node for Agroscope and no AFFILIATED_WITH edges from its contributors — a \"who works where\" view cannot be built from the graph as it stands."
+      "detail": "Neo4j has no RorOrg node for Agroscope and no AFFILIATED_WITH edges from contributors of either org — a \"who works where\" view cannot be built from the graph as it stands."
     },
     {
-      "title": "No publication links to the Agroscope ROR",
-      "detail": "No publication links currently resolve from any Agroscope repository to a scholarly record (checked schema:sourceOrganization against the Agroscope ROR across the SPARQL graph, plus a full-text \"agroscope\" search across Zenodo and Infoscience collections — zero matches). This is an identifier-coverage gap upstream (ORCID / CITATION.cff / DOI linkage), not a dashboard limitation."
+      "title": "No publication links found",
+      "detail": "No publication links currently resolve from any of these repositories to a scholarly record (checked schema:sourceOrganization across the SPARQL graph, plus a full-text \"agroscope\" search across Zenodo and Infoscience collections — zero matches). This is an identifier-coverage gap upstream (ORCID / CITATION.cff / DOI linkage), not a dashboard limitation."
     }
   ]
 }

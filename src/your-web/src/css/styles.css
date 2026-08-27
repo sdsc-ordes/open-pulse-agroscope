@@ -232,6 +232,25 @@ table.op-table tbody tr:hover { background: rgba(85, 97, 166, 0.06); }
   h1 { font-size: 36px; }
 }
 
+.org-section {
+  padding: 40px 0;
+}
+.org-section + .org-section {
+  border-top: 1px dashed var(--op-border);
+  margin-top: 8px;
+}
+.org-section-heading {
+  display: flex;
+  align-items: baseline;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin-bottom: 8px;
+}
+.org-section-heading h2 { display: flex; align-items: center; gap: 12px; }
+.org-section-heading .badge { font-size: 12px; }
+.org-section-heading a { color: var(--op-text-faint); }
+.org-section-heading a:hover { color: var(--op-blue-light); }
+
 .chaoss-bucket { margin-top: 32px; }
 .chaoss-bucket h3 { display: flex; align-items: center; gap: 10px; }
 .chaoss-bucket h3 .badge { font-size: 11px; }

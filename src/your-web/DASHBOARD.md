@@ -45,3 +45,22 @@ Not built yet (follow-ups, in rough priority order):
 - Org avatar / repo thumbnail images (`frontend-dev` §6 / `examples/fetch-images.mjs`) — skipped for v1 to keep scope tight.
 - Re-running `npm run fetch-data` periodically (e.g. a scheduled workflow) to keep the committed snapshots fresh.
 - Deeper per-repo detail pages (currently the catalogue links out to GitHub directly rather than an in-app detail view).
+
+## v2 — added EOA Team
+
+[EOA Team](https://github.com/EOA-team) is a second Agroscope-affiliated GitHub org (Earth Observation of Agroecosystems), added alongside `agroscope-ch`:
+
+- **Data model generalised**: `scripts/fetch-data.mjs` now loops over an `ORGS` list instead of a single hardcoded org; every repo/metric carries an `org` field. SPARQL metadata queries switched from `?repo op:ownedBy <ROR>` to an explicit `VALUES` list of repo URIs from Neo4j — EOA-team's `ownedBy` resolves to its own GitHub org URL, not a ROR record (it isn't a registered ROR institution), so relying on the ROR link would have silently excluded it.
+- **Global numbers now combine both orgs** (46 repos, 49 contributors, 4,944 commits, 16 disciplines) — Overview, Landscape, Community, Health, Impact and What's missing all reflect the combined scope. Landscape gained an org filter; Community's table gained an Org column; Health's CHAOSS section groups metrics under an "Agroscope" and an "EOA Team" heading (top 4 repos per org, not top 6 combined, so EOA-team's higher commit volumes don't crowd out agroscope-ch).
+- **Shared rendering, not copy-paste**: extracted `src/js/lib/{catalogue,community,activity,chaoss,funnel,coverage}.js` — every page calls the same functions against different data slices, so per-scope narrative text (e.g. "X of Y repos have exactly one contributor") is computed from real numbers rather than hardcoded per page.
+- **Caught a visualization-honesty bug while adding this**: one EOA-team repo (`PyProSAIL`, not a flagged fork) carries a handful of commits dated back to 2013 — likely imported/vendored history — 8 years before real activity starts in 2021. The original monthly chart used a `d3.scaleBand` keyed by "months with commits", which spaces every bucket equally regardless of real calendar distance — it would have rendered that 2013 blip as if adjacent to 2021. Switched `renderMonthlyChart` to a real `d3.scaleUtc` time scale so multi-year gaps render as actual empty space.
+- **Forks excluded from activity aggregates**: EOA-team has 2 forks (`python-dem-shadows`, `interactive_plots`); the fetch script now filters `isFork` repos out of the OpenSearch commit query for every activity/health number (they stay in the catalogue, badged) — `agroscope-ch` had zero forks so this was previously a no-op.
+
+## v3 — split every page into per-org sections
+
+The v2 layout blended both orgs into one set of numbers per page (with a separate `eoa-team.html` for an EOA-only view) — in practice the blend read as confusing, since it wasn't obvious which slice a number belonged to. Restructured instead:
+
+- **Every theme page now has 2 sections, one per org** (`orgSectionHeading()` in `components.js` renders the "AGROSCOPE-CH — Agroscope" / "EOA-TEAM — EOA Team" heading + GitHub link consistently). Overview, Landscape, Community, Health, and Impact each render their content twice — once per `summary.scope.orgs` entry — instead of once on blended totals. Coverage keeps its 2 structural gaps shared at the top (they're genuinely dataset-wide facts, not per-org) but splits the per-repo metadata to-do lists by org.
+- **`eoa-team.html` removed** — now redundant, since every page already gives EOA Team its own full section. Its content (contributor note, funnel, CHAOSS cards) was the template the per-org sections on every other page now reuse.
+- **Landscape's org filter dropdown removed** — no longer needed once the catalogue itself is split into two org-scoped grids; type/license/discipline filters stay, scoped independently per org section.
+- **Sections are generated dynamically from `summary.scope.orgs`**, not hand-duplicated per org in the HTML — adding a third org later means adding one entry to the `ORGS` list in `fetch-data.mjs`, not editing six HTML files.

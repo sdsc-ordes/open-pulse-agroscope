@@ -39,6 +39,21 @@ export function fmtNumber(n) {
   return new Intl.NumberFormat('en-US').format(n);
 }
 
+const ORG_TONE = { 'agroscope-ch': 'blue', 'EOA-team': 'success' };
+
+// Heading for one org's section on a page that shows both orgs separately —
+// used on every theme page so "Agroscope" and "EOA Team" never blend into one
+// blended number set (see DASHBOARD.md "v3 — per-org sections").
+export function orgSectionHeading(org) {
+  const tone = ORG_TONE[org.slug] ?? 'muted';
+  return `
+    <div class="org-section-heading">
+      <h2>${badge(org.slug, tone)} ${org.displayName}</h2>
+      <a href="${org.url}" target="_blank" rel="noopener" class="small">${org.url.replace('https://', '')} →</a>
+    </div>
+  `;
+}
+
 export function escapeHtml(str) {
   return String(str).replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
 }

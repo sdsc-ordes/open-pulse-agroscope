@@ -34,45 +34,24 @@
         <p class="kicker">Agroscope on Open Pulse</p>
         <h1>Agroscope's open source, at a glance</h1>
         <p class="lede" id="lede">Loading…</p>
-        <div class="stat-grid" id="stat-grid"></div>
-        <div id="stat-provenance"></div>
       </div>
     </section>
 
-    <section class="section">
-      <div class="wrap">
-        <div class="op-label"><span class="glyph">〇</span><span class="text">Signature visual</span></div>
-        <h2>What Agroscope builds, by discipline</h2>
-        <p class="muted mt-16" style="max-width:640px">
-          Every repository classified by research discipline (Wikidata-resolved), sized by repository count.
-          Agroscope's software spans far beyond agricultural science — statistics, biology and applied
-          engineering all show up here. Click a block to jump to the filtered catalogue.
-        </p>
-        <div id="treemap" class="op-treemap mt-24" style="height:360px"></div>
-        <div id="treemap-provenance"></div>
-      </div>
-    </section>
-
-    <section class="section">
-      <div class="wrap">
-        <div class="op-label"><span class="glyph">〇</span><span class="text">Highlights</span></div>
-        <h2>Reading the numbers</h2>
-        <div class="grid-3 mt-24" id="highlights"></div>
-      </div>
-    </section>
+    <div class="wrap" id="landing-by-org"></div>
   </main>
 
   <footer class="op-footer">
     <div class="wrap">
       <div class="op-footer-top">
         <div class="op-footer-desc">
-          This dashboard tells the open-source story of Agroscope
-          (<span class="mono">github.com/agroscope-ch</span>), built on the Open Pulse platform. Data is
+          This dashboard tells the open-source story of Agroscope across its GitHub orgs —
+          <span class="mono">agroscope-ch</span> and <span class="mono">EOA-team</span> — built on the Open Pulse platform. Data is
           snapshotted at build time from Neo4j, SPARQL, OpenSearch and the CHAOSS metrics API — the browser
           never queries those stores directly.
         </div>
         <div class="op-footer-links">
-          <a href="https://github.com/agroscope-ch" target="_blank" rel="noopener">GitHub org →</a>
+          <a href="https://github.com/agroscope-ch" target="_blank" rel="noopener">agroscope-ch →</a>
+          <a href="https://github.com/EOA-team" target="_blank" rel="noopener">EOA-team →</a>
           <a href="https://ror.org/04d8ztx87" target="_blank" rel="noopener">ROR record →</a>
           <a href="https://openpulse.science" target="_blank" rel="noopener">Open Pulse →</a>
         </div>

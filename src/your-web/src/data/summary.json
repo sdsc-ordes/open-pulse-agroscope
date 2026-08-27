@@ -1,34 +1,48 @@
 {
-  "fetchedAt": "2026-08-26T15:25:58.905Z",
+  "fetchedAt": "2026-08-27T14:44:48.468Z",
   "scope": {
-    "org": "agroscope-ch",
-    "orgUrl": "https://github.com/agroscope-ch",
+    "orgs": [
+      {
+        "slug": "agroscope-ch",
+        "displayName": "Agroscope",
+        "url": "https://github.com/agroscope-ch"
+      },
+      {
+        "slug": "EOA-team",
+        "displayName": "EOA Team",
+        "url": "https://github.com/EOA-team"
+      }
+    ],
     "ror": "https://ror.org/04d8ztx87",
     "rorName": "Agroscope"
   },
-  "repoCount": 20,
-  "softwareCount": 19,
-  "forkCount": 0,
-  "contributorCount": 23,
-  "disciplineCount": 13,
-  "commitCount": 1566,
+  "repoCount": 46,
+  "softwareCount": 45,
+  "forkCount": 2,
+  "contributorCount": 49,
+  "disciplineCount": 16,
+  "commitCount": 4944,
   "activitySpan": {
-    "from": "2021-06-29",
-    "to": "2026-08-24"
+    "from": "2013-01-01",
+    "to": "2026-08-27"
   },
   "publicationLinks": 0,
   "disciplines": [
     {
-      "label": "outline of applied science",
-      "count": 7
+      "label": "natural science",
+      "count": 12
     },
     {
-      "label": "natural science",
-      "count": 6
+      "label": "outline of applied science",
+      "count": 11
     },
     {
       "label": "biology",
-      "count": 5
+      "count": 8
+    },
+    {
+      "label": "mechanical engineering",
+      "count": 4
     },
     {
       "label": "formal science",
@@ -39,19 +53,23 @@
       "count": 4
     },
     {
+      "label": "agricultural science",
+      "count": 3
+    },
+    {
       "label": "information engineering",
       "count": 3
     },
     {
-      "label": "agricultural science",
-      "count": 2
+      "label": "computer engineering",
+      "count": 3
+    },
+    {
+      "label": "Earth science",
+      "count": 3
     },
     {
       "label": "civil engineering",
-      "count": 1
-    },
-    {
-      "label": "mechanical engineering",
       "count": 1
     },
     {
@@ -63,12 +81,132 @@
       "count": 1
     },
     {
-      "label": "computer engineering",
+      "label": "theoretical computer science",
       "count": 1
     },
     {
-      "label": "theoretical computer science",
+      "label": "geography",
+      "count": 1
+    },
+    {
+      "label": "social science",
       "count": 1
     }
-  ]
+  ],
+  "perOrg": {
+    "agroscope-ch": {
+      "displayName": "Agroscope",
+      "url": "https://github.com/agroscope-ch",
+      "repoCount": 20,
+      "softwareCount": 19,
+      "forkCount": 0,
+      "contributorCount": 23,
+      "disciplineCount": 13,
+      "commitCount": 1568,
+      "publicationLinks": 0,
+      "disciplines": [
+        {
+          "label": "outline of applied science",
+          "count": 7
+        },
+        {
+          "label": "natural science",
+          "count": 6
+        },
+        {
+          "label": "biology",
+          "count": 5
+        },
+        {
+          "label": "formal science",
+          "count": 4
+        },
+        {
+          "label": "statistics",
+          "count": 4
+        },
+        {
+          "label": "information engineering",
+          "count": 3
+        },
+        {
+          "label": "agricultural science",
+          "count": 2
+        },
+        {
+          "label": "civil engineering",
+          "count": 1
+        },
+        {
+          "label": "mechanical engineering",
+          "count": 1
+        },
+        {
+          "label": "physics",
+          "count": 1
+        },
+        {
+          "label": "astronomy",
+          "count": 1
+        },
+        {
+          "label": "computer engineering",
+          "count": 1
+        },
+        {
+          "label": "theoretical computer science",
+          "count": 1
+        }
+      ]
+    },
+    "EOA-team": {
+      "displayName": "EOA Team",
+      "url": "https://github.com/EOA-team",
+      "repoCount": 26,
+      "softwareCount": 26,
+      "forkCount": 2,
+      "contributorCount": 26,
+      "disciplineCount": 9,
+      "commitCount": 3376,
+      "publicationLinks": 0,
+      "disciplines": [
+        {
+          "label": "natural science",
+          "count": 6
+        },
+        {
+          "label": "outline of applied science",
+          "count": 4
+        },
+        {
+          "label": "biology",
+          "count": 3
+        },
+        {
+          "label": "mechanical engineering",
+          "count": 3
+        },
+        {
+          "label": "Earth science",
+          "count": 3
+        },
+        {
+          "label": "computer engineering",
+          "count": 2
+        },
+        {
+          "label": "agricultural science",
+          "count": 1
+        },
+        {
+          "label": "geography",
+          "count": 1
+        },
+        {
+          "label": "social science",
+          "count": 1
+        }
+      ]
+    }
+  }
 }
