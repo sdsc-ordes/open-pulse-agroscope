@@ -1,28 +1,27 @@
-# pulseWebKit
+# Open Pulse Dashboards for Agroscope
+
+This repository hosts the **Agroscope Open Source Dashboard** — an interactive, publicly browsable view of [Agroscope](https://www.agroscope.admin.ch)'s software footprint on GitHub, built on the [Open Pulse](https://openpulse.science) research-software-observability platform. It covers the `agroscope-ch` GitHub organisation across five themes: **The Landscape** (what open source exists), **People & Community** (who maintains it), **Health & Activity** (how alive it is, via CHAOSS metrics), **Research Impact** (what it produces), and **What's missing** (the metadata gaps still worth closing). All data is snapshotted at build time from Open Pulse's Neo4j, SPARQL and OpenSearch stores and published as a static site on GitHub Pages — the browser never talks to those stores directly.
+
+**Live dashboard:** [sdsc-ordes.github.io/open-pulse-agroscope](https://sdsc-ordes.github.io/open-pulse-agroscope/)
+
+---
+
+## How to make the dashboard : PulseKit
 
 **Build an interactive dashboard on [Open Pulse](https://openpulse.science) data — with an AI coding agent doing most of the work.**
 
 [Open Pulse](https://openpulse.science) is a research-software-observability platform by the Swiss Data Science Center (SDSC): data about research code — repositories, contributors, commits, organisations, publications. This kit teaches your AI coding agent how to query that data and build a dashboard from it. You describe what you want; the agent fetches real data and builds the UI — in whatever web framework you prefer.
 
----
+### Part 1 — Get started
 
-## Part 1 — Get started
-
-### What you need
+#### What you need
 
 - A [GitHub](https://github.com) account
 - [Node.js](https://nodejs.org) 20 or newer
 - An AI coding agent — [Claude Code](https://claude.com/claude-code) works best; Codex, Cursor, and [Pi](https://pi.dev) work too
 - Open Pulse credentials — ask whoever runs your Open Pulse deployment (for the SDSC instance, see [openpulse.science](https://openpulse.science))
 
-### Two ways to install
-
-- **Option A — copy the template** *(recommended)*: start a new dashboard repo from scratch. You get the full kit — skills, agent docs, design system, devcontainer, GitHub Pages publishing path.
-- **Option B — install the plugin**: add the same skills to a project you already have, from Claude Code *or* Claude Desktop.
-
-Pick **one** per project (combining them loads every skill twice), then follow that option's steps below.
-
-### Option A — copy the template
+#### Install
 
 **1. Create your repo.** On this repo's GitHub page click **Use this template → Create a new repository** (don't fork — a template copy gives you a clean, independent repo). Clone it and open it in your agent; accept the one-time workspace-trust prompt and everything loads automatically.
 
@@ -60,59 +59,23 @@ npm run dev
 
 Open the printed URL in your browser.
 
-### Option B — install the plugin
-
-**1. Install.** How you install depends on which app you're using — pick your tab:
-
-**Claude Code (terminal).** In your project, run:
-
-```
-/plugin marketplace add sdsc-ordes/open-pulse-webkit
-/plugin install open-pulse@open-pulse
-/reload-plugins
-```
-
-The last command loads the freshly installed skills into your current session — needed once after installing; no restart required. Note that `/plugin` is a Claude Code command — typing it into Claude Desktop's chat box returns *"isn't a recognized command here"*, because Desktop installs plugins through its UI instead (see below).
-
-**Claude Desktop (app).** Plugins are added through the **Directory** panel, not the chat box:
-
-![Installing the Open Pulse WebKit plugin in Claude Desktop](.github/assets/claude-desktop-plugin-install.gif)
-
-**2. Build your dashboard.** Type:
-
-```
-/open-pulse:new-dashboard
-```
-
-The wizard sets up your project first — it creates the folders and the `.env.example` template, then tells you exactly which token goes where (usually just the one `OPENPULSE_AUTH` reader token — everything is reached through the same gateway). Fill `.env` in your own editor; **never paste credentials into the chat**. Once your credentials check out, it interviews you, verifies the data exists for your scope, writes a one-page plan for your approval, then builds and verifies the app in a real browser.
-
-**3. See it running.**
-
-```bash
-cd src/your-web
-npm install
-npm run dev
-```
-
-Open the printed URL in your browser.
-
-### After install
+#### After install
 
 Keep asking your agent for changes in plain language — it knows how to query Open Pulse and keep the UI on-brand. You can also skip the wizard and just describe what you want, e.g.
 
 > *"Add a repo health page with CHAOSS metrics — contributors, closure ratio, absence factor, license coverage, and release frequency."*
 
-…or invoke a skill by name — `/query-chaoss` for repo health metrics, `/query-neo4j` for the graph, `/op-search` for semantic search, … (prefix with `open-pulse:` in plugin mode).
+…or invoke a skill by name — `/query-chaoss` for repo health metrics, `/query-neo4j` for the graph, `/op-search` for semantic search, …
 
-### Bring your own framework
+#### Bring your own framework
 
 The kit doesn't prescribe a UI stack. The app lives in `src/your-web/` and can be plain HTML, React, Vue, Svelte, Astro, web components — whatever you (or your agent) prefer; the wizard asks rather than assumes. What's fixed and reusable is framework-neutral: the Open Pulse **query skills** and the **design system** (a contract of CSS custom properties). Everything else is yours to swap.
 
 ---
 
-## Part 2 — Details
+### Part 2 — Details
 
-### The platform
+#### The platform
 
 **Two URLs, different jobs:**
 
@@ -121,7 +84,7 @@ The kit doesn't prescribe a UI stack. The app lives in `src/your-web/` and can b
 | **[openpulse.science](https://openpulse.science)** | Main public page — documentation, ontology namespaces. Dashboards built from this kit link here in the required attribution bar. |
 | **[openpulse.epfl.ch](https://openpulse.epfl.ch)** | First live deployment — Neo4j, SPARQL, OpenSearch, CHAOSS metrics API, collections, extractor, crawler. Skills and `.env` point here. |
 
-### What's in the box
+#### What's in the box
 
 | | What it is | Where |
 |---|---|---|
@@ -132,7 +95,7 @@ The kit doesn't prescribe a UI stack. The app lives in `src/your-web/` and can b
 | 🐳 **Devcontainer** | Ubuntu image + Playwright MCP sidecar (VS Code / Codespaces) | `.devcontainer/` + `tools/image/docker/` |
 | 🔑 **Env template** | Documents every endpoint + credential the skills need | `.env.example` |
 
-### Works with your agent of choice
+#### Works with your agent of choice
 
 Skills and docs are written once in `.claude/` and mirrored to a vendor-neutral copy (`.agents/` + root `AGENTS.md`):
 
@@ -142,9 +105,9 @@ Skills and docs are written once in `.claude/` and mirrored to a vendor-neutral 
 
 > **Only edit `.claude/`**, then run `node tools/sync-agents.mjs`. CI fails if the copies drift.
 
-### The wizard, stage by stage
+#### The wizard, stage by stage
 
-1. **Setup & connectivity** — creates missing project structure (plugin mode included: `src/your-web/`, `.env.example`, `.gitignore`), walks you through creating `.env` with exact instructions, then live-checks every store — via `check-connectivity` in a template copy, or per-store probes through the query skills in plugin mode — so a section is never promised on a store that's down or unconfigured.
+1. **Setup & connectivity** — creates missing project structure (`src/your-web/`, `.env.example`, `.gitignore`), walks you through creating `.env` with exact instructions, then live-checks every store via `check-connectivity` — so a section is never promised on a store that's down or unconfigured.
 2. **Interview** — data scope, primary viewer, storytelling-vs-stats posture, design intent.
 3. **Custom design (optional)** — turns a short design Q&A into a reusable design skill implementing the token contract.
 4. **Themes** — a proven landing-page-plus-four-themes skeleton to take, adapt, or replace.
@@ -153,7 +116,7 @@ Skills and docs are written once in `.claude/` and mirrored to a vendor-neutral 
 
 Nothing is scaffolded until you've signed off on the plan.
 
-### The design skills
+#### The design skills
 
 The look the wizard (and any direct UI request) builds against is delivered **as a skill**, so re-branding is a drop-in — no app-code rewrite. The app references only a fixed set of `--op-*` **token names** (the contract, defined in `frontend-dev`); the active design skill supplies the values:
 
@@ -167,7 +130,7 @@ Rules under any design skill: all colours from contract tokens (no hardcoded hex
 
 **Bring your own brand:** package it as a skill (`SKILL.md` + `assets/tokens.css` implementing the contract), flip the *Active design skill* line in `CLAUDE.md`. Recipe: `.claude/SKILLS.md` §11.
 
-### CHAOSS health metrics
+#### CHAOSS health metrics
 
 The hub computes **35 CHAOSS metrics** live per GitHub repository across three buckets — **Community** (contributors, closure ratio, response times, bus factor, …), **Popularity** (academic impact, forks, …), **Quality** (docs discoverability, licenses, releases, test coverage, …). Browse at [openpulse.epfl.ch/chaoss](https://openpulse.epfl.ch/chaoss); query via the `query-chaoss` skill:
 
@@ -176,7 +139,7 @@ python .claude/skills/query-chaoss/query.py repo sdsc-ordes gimie               
 python .claude/skills/query-chaoss/query.py repo sdsc-ordes gimie closure_ratio --window 30
 ```
 
-### Repository layout
+#### Repository layout
 
 ```
 open-pulse-webkit/
@@ -199,7 +162,7 @@ open-pulse-webkit/
     └── your-web/       # ← your web app, any framework
 ```
 
-### Devcontainer & Playwright MCP (template copies only)
+#### Devcontainer & Playwright MCP (template copies only)
 
 Open in VS Code / Codespaces with the **Dev Containers** extension — `.devcontainer/devcontainer.json` starts a `web` workspace (Ubuntu 24.04, Node 22, Python 3) plus a `playwright-mcp` sidecar (headless Chromium) for UI verification; `post-create` points `.mcp.json` at the sidecar (`http://localhost:8931/mcp`).
 
@@ -210,7 +173,7 @@ npx playwright install chromium
 bash tools/image/docker/setup-mcp.sh host   # only if a prior devcontainer session switched .mcp.json
 ```
 
-### Publishing to GitHub Pages
+#### Publishing to GitHub Pages
 
 The app is designed to publish as a **static site on GitHub Pages** — no server, free hosting.
 
@@ -250,13 +213,13 @@ The app is designed to publish as a **static site on GitHub Pages** — no serve
 
 > **Live data on a static host:** Pages has no server runtime, so the browser can't safely hold credentials. Either **pre-build snapshots** (query Open Pulse at build time, ship static JSON — the wizard's default) or host a credential-holding **external proxy** the static site fetches from.
 
-### Dev notes
+#### Dev notes
 
 - **Editing agent config:** edit `.claude/` only, then `node tools/sync-agents.mjs`. The `agents-sync` CI job fails on drift.
 - **Plugin releases:** bump `version` in `.claude-plugin/plugin.json` on skill-visible changes; sanity-check with `claude plugin validate .`.
 - **Never commit `.env`** — only `.env.example` is tracked.
 
-### Status
+#### Status
 
 **Under construction.** Ready today: the agent toolkit (skills + docs), the plugin packaging, the dual-runtime sync, the devcontainer, the connectivity check, and the env/MCP scaffolding. The web app in `src/your-web/` is scaffolded per-user by the wizard — the kit ships no app of its own.
 
