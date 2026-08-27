@@ -1,0 +1,74 @@
+{
+  "fetchedAt": "2026-08-26T15:25:58.905Z",
+  "scope": {
+    "org": "agroscope-ch",
+    "orgUrl": "https://github.com/agroscope-ch",
+    "ror": "https://ror.org/04d8ztx87",
+    "rorName": "Agroscope"
+  },
+  "repoCount": 20,
+  "softwareCount": 19,
+  "forkCount": 0,
+  "contributorCount": 23,
+  "disciplineCount": 13,
+  "commitCount": 1566,
+  "activitySpan": {
+    "from": "2021-06-29",
+    "to": "2026-08-24"
+  },
+  "publicationLinks": 0,
+  "disciplines": [
+    {
+      "label": "outline of applied science",
+      "count": 7
+    },
+    {
+      "label": "natural science",
+      "count": 6
+    },
+    {
+      "label": "biology",
+      "count": 5
+    },
+    {
+      "label": "formal science",
+      "count": 4
+    },
+    {
+      "label": "statistics",
+      "count": 4
+    },
+    {
+      "label": "information engineering",
+      "count": 3
+    },
+    {
+      "label": "agricultural science",
+      "count": 2
+    },
+    {
+      "label": "civil engineering",
+      "count": 1
+    },
+    {
+      "label": "mechanical engineering",
+      "count": 1
+    },
+    {
+      "label": "physics",
+      "count": 1
+    },
+    {
+      "label": "astronomy",
+      "count": 1
+    },
+    {
+      "label": "computer engineering",
+      "count": 1
+    },
+    {
+      "label": "theoretical computer science",
+      "count": 1
+    }
+  ]
+}

@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Research Impact — Agroscope Open Source</title>
+  <meta name="description" content="What does Agroscope's open source produce, in terms of research output?" />
+</head>
+<body>
+  <div class="op-attribution">
+    <div class="wrap">
+      Built using <a href="https://openpulse.science" target="_blank" rel="noopener">openpulse.science</a> at
+      <span class="mono" data-build-timestamp></span>
+    </div>
+  </div>
+
+  <header class="op-header">
+    <div class="wrap">
+      <a href="index.html" class="op-logo"><span class="dot"></span>Agroscope <span class="faint">Open Source</span></a>
+      <nav class="op-nav">
+        <a href="index.html">Overview</a>
+        <a href="landscape.html">Landscape</a>
+        <a href="community.html">Community</a>
+        <a href="health.html">Health</a>
+        <a href="impact.html">Impact</a>
+        <a href="coverage.html">What's missing</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="op-hero" style="padding-bottom:24px">
+      <div class="wrap">
+        <p class="kicker">Theme 4 — Research Impact</p>
+        <h1>What does it produce?</h1>
+        <p class="lede" id="lede">Loading…</p>
+      </div>
+    </section>
+
+    <section class="section" style="padding-top:0">
+      <div class="wrap">
+        <div class="op-label"><span class="glyph">〇</span><span class="text">Software → papers funnel</span></div>
+        <h2>From repository to recognised research output</h2>
+        <div id="funnel" class="mt-32"></div>
+        <div id="impact-provenance"></div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="wrap">
+        <div class="banner-soft">
+          <h3>This is a coverage story, not a dead end</h3>
+          <p class="small mt-16" style="max-width:680px;color:var(--op-text-2)">
+            Sparse software→publication links are common across young or informally-published research
+            software — the code exists and is used, but nothing yet connects it to a DOI, an ORCID record, or
+            a <span class="mono">CITATION.cff</span> file that Open Pulse's extractors can follow. Closing this
+            gap is an upstream metadata task for Agroscope's maintainers, not a limitation of this dashboard.
+            See <a href="coverage.html">What's missing</a> for the actionable list.
+          </p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="op-footer">
+    <div class="wrap">
+      <div class="op-footer-top">
+        <div class="op-footer-desc">
+          This dashboard tells the open-source story of Agroscope
+          (<span class="mono">github.com/agroscope-ch</span>), built on the Open Pulse platform.
+        </div>
+        <div class="op-footer-links">
+          <a href="https://github.com/agroscope-ch" target="_blank" rel="noopener">GitHub org →</a>
+          <a href="https://ror.org/04d8ztx87" target="_blank" rel="noopener">ROR record →</a>
+          <a href="https://openpulse.science" target="_blank" rel="noopener">Open Pulse →</a>
+        </div>
+      </div>
+      <div class="op-footer-bottom">Agroscope Open Source Dashboard — built with pulseWebKit.</div>
+    </div>
+  </footer>
+
+  <script type="module" src="/src/js/main.js"></script>
+  <script type="module" src="/src/js/impact.js"></script>
+</body>
+</html>

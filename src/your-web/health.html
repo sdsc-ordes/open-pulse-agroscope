@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Community Health &amp; Activity — Agroscope Open Source</title>
+  <meta name="description" content="How alive and healthy is Agroscope's open source — CHAOSS metrics and commit activity." />
+</head>
+<body>
+  <div class="op-attribution">
+    <div class="wrap">
+      Built using <a href="https://openpulse.science" target="_blank" rel="noopener">openpulse.science</a> at
+      <span class="mono" data-build-timestamp></span>
+    </div>
+  </div>
+
+  <header class="op-header">
+    <div class="wrap">
+      <a href="index.html" class="op-logo"><span class="dot"></span>Agroscope <span class="faint">Open Source</span></a>
+      <nav class="op-nav">
+        <a href="index.html">Overview</a>
+        <a href="landscape.html">Landscape</a>
+        <a href="community.html">Community</a>
+        <a href="health.html">Health</a>
+        <a href="impact.html">Impact</a>
+        <a href="coverage.html">What's missing</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="op-hero" style="padding-bottom:24px">
+      <div class="wrap">
+        <p class="kicker">Theme 3 — Community Health &amp; Activity</p>
+        <h1>How alive and healthy is it?</h1>
+        <p class="lede" id="lede">Loading…</p>
+        <div class="stat-grid" id="stat-grid"></div>
+      </div>
+    </section>
+
+    <section class="section" style="padding-top:24px">
+      <div class="wrap">
+        <div class="op-label"><span class="glyph">〇</span><span class="text">Ecosystem activity</span></div>
+        <h2>Commit activity across the organisation, over time</h2>
+        <p class="small muted mt-8" style="max-width:640px">
+          Monthly commit volume across all 20 repositories — an activity measure, not a repo-count growth
+          curve. For how individual projects compare, see the per-repo chart below.
+        </p>
+        <div id="activity-chart" class="mt-24" style="height:220px"></div>
+        <div id="activity-provenance"></div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="wrap">
+        <div class="op-label"><span class="glyph">〇</span><span class="text">Per-repo comparison</span></div>
+        <h2>Commit volume by repository</h2>
+        <p class="small muted mt-8" style="max-width:640px">
+          A different data cut from the chart above — each project's own trajectory, not the organisation's
+          combined activity.
+        </p>
+        <div id="repo-bar-chart" class="mt-24"></div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="wrap">
+        <div class="op-label"><span class="glyph">〇</span><span class="text">CHAOSS metrics</span></div>
+        <h2>Community health, by <span class="mono">CHAOSS</span> metric</h2>
+        <p class="small muted mt-8" style="max-width:680px">
+          Metrics from the <a href="https://chaoss.community" target="_blank" rel="noopener">CHAOSS</a> project,
+          computed live per repository via the Open Pulse CHAOSS API, grouped into its three standard
+          buckets. Shown for the six most active repositories.
+        </p>
+        <div id="chaoss-repos" class="mt-32"></div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="op-footer">
+    <div class="wrap">
+      <div class="op-footer-top">
+        <div class="op-footer-desc">
+          This dashboard tells the open-source story of Agroscope
+          (<span class="mono">github.com/agroscope-ch</span>), built on the Open Pulse platform.
+        </div>
+        <div class="op-footer-links">
+          <a href="https://github.com/agroscope-ch" target="_blank" rel="noopener">GitHub org →</a>
+          <a href="https://ror.org/04d8ztx87" target="_blank" rel="noopener">ROR record →</a>
+          <a href="https://openpulse.science" target="_blank" rel="noopener">Open Pulse →</a>
+        </div>
+      </div>
+      <div class="op-footer-bottom">Agroscope Open Source Dashboard — built with pulseWebKit.</div>
+    </div>
+  </footer>
+
+  <script type="module" src="/src/js/main.js"></script>
+  <script type="module" src="/src/js/health.js"></script>
+</body>
+</html>

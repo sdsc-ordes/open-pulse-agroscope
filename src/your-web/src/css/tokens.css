@@ -1,0 +1,48 @@
+/* Open Pulse dark theme — values for the --op-* token contract
+ * (contract defined in the frontend-dev skill; roles documented in SKILL.md §2).
+ * A design delta over the sdsc-ui-kit brand: brand hexes come from
+ * SDSC_Design_System.pdf (datascience.ch Webflow production, June 2026);
+ * dark surfaces/text are this theme's own. Copy into the app's global
+ * stylesheet :root (and mirror into the utility framework's theme, if any).
+ * Permanent dark — there is no light mode and no .dark toggle.
+ */
+
+:root {
+  /* Fonts (packages: SKILL.md §3.2; loading mechanics: frontend-dev) */
+  --op-font-heading: 'Space Grotesk Variable', 'Space Grotesk', system-ui, sans-serif;
+  --op-font-body: 'Switzer', system-ui, sans-serif;
+  --op-font-mono: 'JetBrains Mono', monospace;
+
+  /* Surfaces (dark-theme values — no sdsc counterpart) */
+  --op-bg: #0c0c12;              /* page background */
+  --op-surface: #141420;         /* default card / panel */
+  --op-surface-2: #1c1c2c;       /* elevated: table heads, second-level cards */
+  --op-surface-active: #1a1834;  /* selected/active row, current sidebar item */
+  --op-border: #242438;          /* default border: cards, dividers, cells */
+  --op-border-subtle: #1a1a28;   /* dim/inset border */
+
+  /* Brand ink-blues (sdsc-ui-kit Primary/Secondary scales) */
+  --op-blue-darker: #161438;     /* Secondary scale, darker */
+  --op-blue-dark: #26235c;       /* --secondary-color (base) */
+  --op-blue-mid: #434e85;        /* Primary scale, dark — hover on primary */
+  --op-blue: #5561a6;            /* --primary-color (base) — interactive blue */
+  --op-blue-light: #8a94c9;      /* Primary scale, lighter — links on dark */
+  --op-blue-pale: #1a1834;       /* soft-banner replacement for #dddeec */
+
+  /* Text */
+  --op-text: #f4f4fc;            /* headings, body */
+  --op-text-2: #c0c0dc;          /* secondary body, table cells */
+  --op-text-muted: #9898b8;      /* captions, labels, table heads */
+  --op-text-faint: #6a6a88;      /* fine print, timestamps, disabled */
+  --op-text-on-blue: #ffffff;    /* text on blue surfaces */
+
+  /* Status (badges/toasts only — sdsc semantic scales, light step) */
+  --op-success: #34d399;
+  --op-error: #f87171;
+  --op-warning: #fbbf24;
+  --op-info: var(--op-blue);     /* aliased to brand blue */
+
+  /* Footer */
+  --op-footer-bg: #000000;       /* true black for partner-logo contrast */
+  --op-footer-border: rgba(255, 255, 255, 0.10);
+}

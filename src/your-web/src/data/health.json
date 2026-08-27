@@ -1,0 +1,1411 @@
+{
+  "fetchedAt": "2026-08-26T15:25:58.905Z",
+  "scope": {
+    "org": "agroscope-ch",
+    "orgUrl": "https://github.com/agroscope-ch",
+    "ror": "https://ror.org/04d8ztx87",
+    "rorName": "Agroscope"
+  },
+  "monthlySeries": [
+    {
+      "month": "2021-06",
+      "count": 2
+    },
+    {
+      "month": "2021-07",
+      "count": 5
+    },
+    {
+      "month": "2021-08",
+      "count": 3
+    },
+    {
+      "month": "2021-09",
+      "count": 3
+    },
+    {
+      "month": "2021-10",
+      "count": 26
+    },
+    {
+      "month": "2021-11",
+      "count": 25
+    },
+    {
+      "month": "2021-12",
+      "count": 3
+    },
+    {
+      "month": "2022-01",
+      "count": 14
+    },
+    {
+      "month": "2022-03",
+      "count": 9
+    },
+    {
+      "month": "2022-04",
+      "count": 15
+    },
+    {
+      "month": "2022-05",
+      "count": 7
+    },
+    {
+      "month": "2022-06",
+      "count": 14
+    },
+    {
+      "month": "2022-07",
+      "count": 29
+    },
+    {
+      "month": "2022-08",
+      "count": 18
+    },
+    {
+      "month": "2022-09",
+      "count": 25
+    },
+    {
+      "month": "2022-10",
+      "count": 4
+    },
+    {
+      "month": "2022-11",
+      "count": 12
+    },
+    {
+      "month": "2022-12",
+      "count": 32
+    },
+    {
+      "month": "2023-01",
+      "count": 37
+    },
+    {
+      "month": "2023-02",
+      "count": 2
+    },
+    {
+      "month": "2023-03",
+      "count": 6
+    },
+    {
+      "month": "2023-04",
+      "count": 21
+    },
+    {
+      "month": "2023-05",
+      "count": 62
+    },
+    {
+      "month": "2023-06",
+      "count": 18
+    },
+    {
+      "month": "2023-07",
+      "count": 5
+    },
+    {
+      "month": "2023-08",
+      "count": 1
+    },
+    {
+      "month": "2023-11",
+      "count": 8
+    },
+    {
+      "month": "2023-12",
+      "count": 38
+    },
+    {
+      "month": "2024-01",
+      "count": 18
+    },
+    {
+      "month": "2024-02",
+      "count": 51
+    },
+    {
+      "month": "2024-03",
+      "count": 18
+    },
+    {
+      "month": "2024-04",
+      "count": 26
+    },
+    {
+      "month": "2024-05",
+      "count": 12
+    },
+    {
+      "month": "2024-06",
+      "count": 32
+    },
+    {
+      "month": "2024-07",
+      "count": 124
+    },
+    {
+      "month": "2024-08",
+      "count": 24
+    },
+    {
+      "month": "2024-09",
+      "count": 10
+    },
+    {
+      "month": "2024-10",
+      "count": 56
+    },
+    {
+      "month": "2024-11",
+      "count": 75
+    },
+    {
+      "month": "2024-12",
+      "count": 50
+    },
+    {
+      "month": "2025-01",
+      "count": 44
+    },
+    {
+      "month": "2025-02",
+      "count": 23
+    },
+    {
+      "month": "2025-03",
+      "count": 13
+    },
+    {
+      "month": "2025-04",
+      "count": 48
+    },
+    {
+      "month": "2025-05",
+      "count": 16
+    },
+    {
+      "month": "2025-06",
+      "count": 15
+    },
+    {
+      "month": "2025-07",
+      "count": 33
+    },
+    {
+      "month": "2025-08",
+      "count": 2
+    },
+    {
+      "month": "2025-09",
+      "count": 12
+    },
+    {
+      "month": "2025-10",
+      "count": 11
+    },
+    {
+      "month": "2025-11",
+      "count": 13
+    },
+    {
+      "month": "2025-12",
+      "count": 24
+    },
+    {
+      "month": "2026-01",
+      "count": 21
+    },
+    {
+      "month": "2026-02",
+      "count": 52
+    },
+    {
+      "month": "2026-03",
+      "count": 65
+    },
+    {
+      "month": "2026-04",
+      "count": 17
+    },
+    {
+      "month": "2026-05",
+      "count": 15
+    },
+    {
+      "month": "2026-06",
+      "count": 10
+    },
+    {
+      "month": "2026-07",
+      "count": 100
+    },
+    {
+      "month": "2026-08",
+      "count": 92
+    }
+  ],
+  "activitySpan": {
+    "from": "2021-06-29",
+    "to": "2026-08-24"
+  },
+  "totalCommits": 1566,
+  "uniqueAuthors": 23,
+  "perRepo": [
+    {
+      "name": "srppp",
+      "url": "https://github.com/agroscope-ch/srppp",
+      "commits": 442,
+      "contributors": 3,
+      "isFork": false
+    },
+    {
+      "name": "digiRhythm",
+      "url": "https://github.com/agroscope-ch/digiRhythm",
+      "commits": 253,
+      "contributors": 3,
+      "isFork": false
+    },
+    {
+      "name": "triact",
+      "url": "https://github.com/agroscope-ch/triact",
+      "commits": 245,
+      "contributors": 1,
+      "isFork": false
+    },
+    {
+      "name": "srppphist",
+      "url": "https://github.com/agroscope-ch/srppphist",
+      "commits": 162,
+      "contributors": 2,
+      "isFork": false
+    },
+    {
+      "name": "plasmopy",
+      "url": "https://github.com/agroscope-ch/plasmopy",
+      "commits": 88,
+      "contributors": 1,
+      "isFork": false
+    },
+    {
+      "name": "derappp",
+      "url": "https://github.com/agroscope-ch/derappp",
+      "commits": 75,
+      "contributors": 2,
+      "isFork": false
+    },
+    {
+      "name": "sour-rot",
+      "url": "https://github.com/agroscope-ch/sour-rot",
+      "commits": 75,
+      "contributors": 1,
+      "isFork": false
+    },
+    {
+      "name": "openfoodtox",
+      "url": "https://github.com/agroscope-ch/openfoodtox",
+      "commits": 58,
+      "contributors": 2,
+      "isFork": false
+    },
+    {
+      "name": "swiss-fd-susceptibility",
+      "url": "https://github.com/agroscope-ch/swiss-fd-susceptibility",
+      "commits": 50,
+      "contributors": 1,
+      "isFork": false
+    },
+    {
+      "name": "Esca-epidemiology",
+      "url": "https://github.com/agroscope-ch/Esca-epidemiology",
+      "commits": 32,
+      "contributors": 1,
+      "isFork": false
+    },
+    {
+      "name": "Rumex",
+      "url": "https://github.com/agroscope-ch/Rumex",
+      "commits": 25,
+      "contributors": 1,
+      "isFork": false
+    },
+    {
+      "name": "Irrigation",
+      "url": "https://github.com/agroscope-ch/Irrigation",
+      "commits": 15,
+      "contributors": 1,
+      "isFork": false
+    },
+    {
+      "name": "graphoPy",
+      "url": "https://github.com/agroscope-ch/graphoPy",
+      "commits": 15,
+      "contributors": 1,
+      "isFork": false
+    },
+    {
+      "name": "Agricultural_datasets",
+      "url": "https://github.com/agroscope-ch/Agricultural_datasets",
+      "commits": 10,
+      "contributors": 1,
+      "isFork": false
+    },
+    {
+      "name": "agroscope-ch.r-universe.dev",
+      "url": "https://github.com/agroscope-ch/agroscope-ch.r-universe.dev",
+      "commits": 6,
+      "contributors": 1,
+      "isFork": false
+    },
+    {
+      "name": "test",
+      "url": "https://github.com/agroscope-ch/test",
+      "commits": 5,
+      "contributors": 1,
+      "isFork": false
+    },
+    {
+      "name": "TillerCounterGui",
+      "url": "https://github.com/agroscope-ch/TillerCounterGui",
+      "commits": 4,
+      "contributors": 1,
+      "isFork": false
+    },
+    {
+      "name": "sqlparser",
+      "url": "https://github.com/agroscope-ch/sqlparser",
+      "commits": 4,
+      "contributors": 1,
+      "isFork": false
+    },
+    {
+      "name": "PhytoPRE_FusaProg",
+      "url": "https://github.com/agroscope-ch/PhytoPRE_FusaProg",
+      "commits": 1,
+      "contributors": 1,
+      "isFork": false
+    },
+    {
+      "name": "salca",
+      "url": "https://github.com/agroscope-ch/salca",
+      "commits": 1,
+      "contributors": 1,
+      "isFork": false
+    }
+  ],
+  "chaoss": {
+    "srppp": {
+      "contributors": {
+        "bucket": "Community",
+        "repo": "agroscope-ch/srppp",
+        "canonical_url": "https://github.com/agroscope-ch/srppp",
+        "window_days": 3650,
+        "computed_at": "2026-08-26T15:25:59+00:00",
+        "slug": "contributors",
+        "name": "Contributors",
+        "category": "Community",
+        "chaoss_topic": "Contributor",
+        "question": "Is there a community at all?",
+        "description": "Distinct people who contributed to the repository. Computed against all three stores so the page exposes both the windowed view (OpenSearch / SPARQL) and the all-time graph view (Neo4j).",
+        "chaoss_url": "https://chaoss.community/kb/metric-contributors/",
+        "is_time_based": true,
+        "value": "6",
+        "label": "last 3650 days · OpenSearch",
+        "secondary": "Neo4j (all-time): 3 · SPARQL (windowed): 0 · OpenSearch (windowed): 6",
+        "headline_tone": null,
+        "unification": "Largest non-zero of three stores: **OpenSearch** (windowed git-cardinality) · **SPARQL** (windowed contribution graph) · **Neo4j** (all-time edges). Fallback ladder skips zeros so an empty index can't hide a real signal.",
+        "notes": "OpenSearch counts distinct ``author_uuid`` values (SortingHat-merged identities, so a person's aliases count once) on commits indexed by GrimoireLab in the window. SPARQL uses the typed ``pulse:lastContributionDate`` on the Contribution node. Neo4j is an all-time edge count — it ignores the window.",
+        "series_unit": "contributors",
+        "visual": null,
+        "examples": []
+      },
+      "new_contributors": {
+        "bucket": "Community",
+        "repo": "agroscope-ch/srppp",
+        "canonical_url": "https://github.com/agroscope-ch/srppp",
+        "window_days": 3650,
+        "computed_at": "2026-08-26T15:26:00+00:00",
+        "slug": "new_contributors",
+        "name": "New Contributors",
+        "category": "Community",
+        "chaoss_topic": "Contributor",
+        "question": "Is the community growing?",
+        "description": "People whose *first* contribution to this repository falls inside the chosen window. SPARQL uses the typed first-date on the Contribution node; OpenSearch computes the min commit date per author client-side.",
+        "chaoss_url": "https://chaoss.community/kb/metric-new-contributors/",
+        "is_time_based": true,
+        "value": "6",
+        "label": "last 3650 days · OpenSearch",
+        "secondary": "SPARQL: 0 · OpenSearch: 6",
+        "headline_tone": null,
+        "unification": null,
+        "notes": "A *new* contributor is one whose first contribution to this repo falls inside the window — not necessarily their first ever contribution to anything. Counts can differ between SPARQL and OpenSearch because the crawler deduplicates by GitHub login while GrimoireLab buckets by git author_name (which may include several aliases per person).",
+        "series_unit": "events",
+        "visual": null,
+        "examples": [
+          {
+            "label": "Johannes Ranke",
+            "detail": "2023-11-30",
+            "source": "OpenSearch"
+          },
+          {
+            "label": "Mathis Marcel",
+            "detail": "2024-02-15",
+            "source": "OpenSearch"
+          },
+          {
+            "label": "Lutz Elisabeth",
+            "detail": "2024-10-22",
+            "source": "OpenSearch"
+          },
+          {
+            "label": "jranke",
+            "detail": "2024-10-25",
+            "source": "OpenSearch"
+          },
+          {
+            "label": "Lutzeli",
+            "detail": "2025-02-20",
+            "source": "OpenSearch"
+          },
+          {
+            "label": "Marcel Mathis",
+            "detail": "2024-11-28",
+            "source": "OpenSearch"
+          }
+        ]
+      },
+      "activity_dates": {
+        "bucket": "Community",
+        "repo": "agroscope-ch/srppp",
+        "canonical_url": "https://github.com/agroscope-ch/srppp",
+        "window_days": 3650,
+        "computed_at": "2026-08-26T15:26:00+00:00",
+        "slug": "activity_dates",
+        "name": "Activity Dates and Times",
+        "category": "Community",
+        "chaoss_topic": "Lifecycle",
+        "question": "What is the engagement pattern?",
+        "description": "Monthly commit histogram from GrimoireLab. The card renders it as an inline sparkline so you can see steady vs bursty activity at a glance.",
+        "chaoss_url": "https://chaoss.community/kb/metric-activity-dates-and-times/",
+        "is_time_based": true,
+        "value": "442",
+        "label": "commits (last 10 years)",
+        "secondary": "busiest month: 2024-07 (65 commits)",
+        "headline_tone": null,
+        "unification": null,
+        "notes": "Date histogram on GrimoireLab's ``grimoire_creation_date`` field. Each bar = one calendar month. Bursty patterns (release-tag spikes) tell a different story from steady monthly contributions.",
+        "series_unit": "commits",
+        "visual": null,
+        "examples": []
+      },
+      "technical_fork": {
+        "bucket": "Popularity",
+        "repo": "agroscope-ch/srppp",
+        "canonical_url": "https://github.com/agroscope-ch/srppp",
+        "window_days": 3650,
+        "computed_at": "2026-08-26T15:26:00+00:00",
+        "slug": "technical_fork",
+        "name": "Technical Fork",
+        "category": "Popularity",
+        "chaoss_topic": "Software",
+        "question": "How often is the project being reused / developed from?",
+        "description": "Total fork count. The GitHub-reported number comes from SPARQL (latest crawl). Neo4j gives the in-graph count — the subset of those forks the crawler has actually walked.",
+        "chaoss_url": "https://chaoss.community/kb/metric-technical-fork/",
+        "is_time_based": false,
+        "value": "0",
+        "label": "forks (GitHub-reported)",
+        "secondary": "in graph: 0",
+        "headline_tone": null,
+        "unification": null,
+        "notes": "A snapshot, not a time-series. The GitHub-reported count (SPARQL) is authoritative; the Neo4j count is the subset the crawler has actually enqueued and walked.",
+        "series_unit": "events",
+        "visual": null,
+        "examples": []
+      },
+      "project_popularity": {
+        "bucket": "Popularity",
+        "repo": "agroscope-ch/srppp",
+        "canonical_url": "https://github.com/agroscope-ch/srppp",
+        "window_days": 3650,
+        "computed_at": "2026-08-26T15:26:00+00:00",
+        "slug": "project_popularity",
+        "name": "Project Popularity",
+        "category": "Popularity",
+        "chaoss_topic": "Software",
+        "question": "How visible is the project?",
+        "description": "Composite snapshot: stars + forks from the SPARQL store, and *dependents* from inbound DEPENDS_ON edges in Neo4j — i.e. other repositories that list this one in their package manifest.",
+        "chaoss_url": "https://chaoss.community/kb/metric-project-popularity/",
+        "is_time_based": false,
+        "value": "—",
+        "label": "no popularity signal",
+        "secondary": null,
+        "headline_tone": null,
+        "unification": null,
+        "notes": "Snapshot. Stars and forks come from the latest metadata crawl; the dependents count comes from inbound DEPENDS_ON edges resolved from package manifests (npm, pypi, cargo, go.mod, …) — only as complete as the crawl pipeline that extracted them.",
+        "series_unit": "events",
+        "visual": {
+          "kind": "stat_tiles",
+          "tiles": []
+        },
+        "examples": []
+      },
+      "licenses_declared": {
+        "bucket": "Quality",
+        "repo": "agroscope-ch/srppp",
+        "canonical_url": "https://github.com/agroscope-ch/srppp",
+        "window_days": 3650,
+        "computed_at": "2026-08-26T15:26:00+00:00",
+        "slug": "licenses_declared",
+        "name": "Licenses Declared",
+        "category": "Quality",
+        "chaoss_topic": "Software",
+        "question": "Is the software legally usable and reusable?",
+        "description": "Whether the repository declares one or more licenses (schema:license triple). Doesn't yet check the LICENSE file directly — that's the *License Coverage* metric (Phase 2 / would-like-to-have).",
+        "chaoss_url": "https://chaoss.community/kb/metric-licenses-declared/",
+        "is_time_based": false,
+        "value": "✗",
+        "label": "no license declared",
+        "secondary": null,
+        "headline_tone": null,
+        "unification": "Presence flag: ✓ if **SPARQL** returns ≥ 1 `schema:license` triple, ✗ otherwise.",
+        "notes": "An undeclared license isn't the same as 'no license' — it just means the metadata extractor didn't find one. Triggering enrichment may surface it.",
+        "series_unit": "events",
+        "visual": null,
+        "examples": []
+      }
+    },
+    "digiRhythm": {
+      "contributors": {
+        "bucket": "Community",
+        "repo": "agroscope-ch/digiRhythm",
+        "canonical_url": "https://github.com/agroscope-ch/digiRhythm",
+        "window_days": 3650,
+        "computed_at": "2026-08-26T15:26:01+00:00",
+        "slug": "contributors",
+        "name": "Contributors",
+        "category": "Community",
+        "chaoss_topic": "Contributor",
+        "question": "Is there a community at all?",
+        "description": "Distinct people who contributed to the repository. Computed against all three stores so the page exposes both the windowed view (OpenSearch / SPARQL) and the all-time graph view (Neo4j).",
+        "chaoss_url": "https://chaoss.community/kb/metric-contributors/",
+        "is_time_based": true,
+        "value": "4",
+        "label": "last 3650 days · OpenSearch",
+        "secondary": "Neo4j (all-time): 3 · SPARQL (windowed): 0 · OpenSearch (windowed): 4",
+        "headline_tone": null,
+        "unification": "Largest non-zero of three stores: **OpenSearch** (windowed git-cardinality) · **SPARQL** (windowed contribution graph) · **Neo4j** (all-time edges). Fallback ladder skips zeros so an empty index can't hide a real signal.",
+        "notes": "OpenSearch counts distinct ``author_uuid`` values (SortingHat-merged identities, so a person's aliases count once) on commits indexed by GrimoireLab in the window. SPARQL uses the typed ``pulse:lastContributionDate`` on the Contribution node. Neo4j is an all-time edge count — it ignores the window.",
+        "series_unit": "contributors",
+        "visual": null,
+        "examples": []
+      },
+      "new_contributors": {
+        "bucket": "Community",
+        "repo": "agroscope-ch/digiRhythm",
+        "canonical_url": "https://github.com/agroscope-ch/digiRhythm",
+        "window_days": 3650,
+        "computed_at": "2026-08-26T15:26:01+00:00",
+        "slug": "new_contributors",
+        "name": "New Contributors",
+        "category": "Community",
+        "chaoss_topic": "Contributor",
+        "question": "Is the community growing?",
+        "description": "People whose *first* contribution to this repository falls inside the chosen window. SPARQL uses the typed first-date on the Contribution node; OpenSearch computes the min commit date per author client-side.",
+        "chaoss_url": "https://chaoss.community/kb/metric-new-contributors/",
+        "is_time_based": true,
+        "value": "4",
+        "label": "last 3650 days · OpenSearch",
+        "secondary": "SPARQL: 0 · OpenSearch: 4",
+        "headline_tone": null,
+        "unification": null,
+        "notes": "A *new* contributor is one whose first contribution to this repo falls inside the window — not necessarily their first ever contribution to anything. Counts can differ between SPARQL and OpenSearch because the crawler deduplicates by GitHub login while GrimoireLab buckets by git author_name (which may include several aliases per person).",
+        "series_unit": "events",
+        "visual": null,
+        "examples": [
+          {
+            "label": "Nasser Roland",
+            "detail": "2021-10-13",
+            "source": "OpenSearch"
+          },
+          {
+            "label": "Jad",
+            "detail": "2022-08-17",
+            "source": "OpenSearch"
+          },
+          {
+            "label": "Hassan Nasser",
+            "detail": "2021-10-20",
+            "source": "OpenSearch"
+          },
+          {
+            "label": "cmdoret",
+            "detail": "2022-01-06",
+            "source": "OpenSearch"
+          }
+        ]
+      },
+      "activity_dates": {
+        "bucket": "Community",
+        "repo": "agroscope-ch/digiRhythm",
+        "canonical_url": "https://github.com/agroscope-ch/digiRhythm",
+        "window_days": 3650,
+        "computed_at": "2026-08-26T15:26:01+00:00",
+        "slug": "activity_dates",
+        "name": "Activity Dates and Times",
+        "category": "Community",
+        "chaoss_topic": "Lifecycle",
+        "question": "What is the engagement pattern?",
+        "description": "Monthly commit histogram from GrimoireLab. The card renders it as an inline sparkline so you can see steady vs bursty activity at a glance.",
+        "chaoss_url": "https://chaoss.community/kb/metric-activity-dates-and-times/",
+        "is_time_based": true,
+        "value": "253",
+        "label": "commits (last 10 years)",
+        "secondary": "busiest month: 2024-07 (28 commits)",
+        "headline_tone": null,
+        "unification": null,
+        "notes": "Date histogram on GrimoireLab's ``grimoire_creation_date`` field. Each bar = one calendar month. Bursty patterns (release-tag spikes) tell a different story from steady monthly contributions.",
+        "series_unit": "commits",
+        "visual": null,
+        "examples": []
+      },
+      "technical_fork": {
+        "bucket": "Popularity",
+        "repo": "agroscope-ch/digiRhythm",
+        "canonical_url": "https://github.com/agroscope-ch/digiRhythm",
+        "window_days": 3650,
+        "computed_at": "2026-08-26T15:26:01+00:00",
+        "slug": "technical_fork",
+        "name": "Technical Fork",
+        "category": "Popularity",
+        "chaoss_topic": "Software",
+        "question": "How often is the project being reused / developed from?",
+        "description": "Total fork count. The GitHub-reported number comes from SPARQL (latest crawl). Neo4j gives the in-graph count — the subset of those forks the crawler has actually walked.",
+        "chaoss_url": "https://chaoss.community/kb/metric-technical-fork/",
+        "is_time_based": false,
+        "value": "0",
+        "label": "forks (GitHub-reported)",
+        "secondary": "in graph: 0",
+        "headline_tone": null,
+        "unification": null,
+        "notes": "A snapshot, not a time-series. The GitHub-reported count (SPARQL) is authoritative; the Neo4j count is the subset the crawler has actually enqueued and walked.",
+        "series_unit": "events",
+        "visual": null,
+        "examples": []
+      },
+      "project_popularity": {
+        "bucket": "Popularity",
+        "repo": "agroscope-ch/digiRhythm",
+        "canonical_url": "https://github.com/agroscope-ch/digiRhythm",
+        "window_days": 3650,
+        "computed_at": "2026-08-26T15:26:01+00:00",
+        "slug": "project_popularity",
+        "name": "Project Popularity",
+        "category": "Popularity",
+        "chaoss_topic": "Software",
+        "question": "How visible is the project?",
+        "description": "Composite snapshot: stars + forks from the SPARQL store, and *dependents* from inbound DEPENDS_ON edges in Neo4j — i.e. other repositories that list this one in their package manifest.",
+        "chaoss_url": "https://chaoss.community/kb/metric-project-popularity/",
+        "is_time_based": false,
+        "value": "—",
+        "label": "no popularity signal",
+        "secondary": null,
+        "headline_tone": null,
+        "unification": null,
+        "notes": "Snapshot. Stars and forks come from the latest metadata crawl; the dependents count comes from inbound DEPENDS_ON edges resolved from package manifests (npm, pypi, cargo, go.mod, …) — only as complete as the crawl pipeline that extracted them.",
+        "series_unit": "events",
+        "visual": {
+          "kind": "stat_tiles",
+          "tiles": []
+        },
+        "examples": []
+      },
+      "licenses_declared": {
+        "bucket": "Quality",
+        "repo": "agroscope-ch/digiRhythm",
+        "canonical_url": "https://github.com/agroscope-ch/digiRhythm",
+        "window_days": 3650,
+        "computed_at": "2026-08-26T15:26:02+00:00",
+        "slug": "licenses_declared",
+        "name": "Licenses Declared",
+        "category": "Quality",
+        "chaoss_topic": "Software",
+        "question": "Is the software legally usable and reusable?",
+        "description": "Whether the repository declares one or more licenses (schema:license triple). Doesn't yet check the LICENSE file directly — that's the *License Coverage* metric (Phase 2 / would-like-to-have).",
+        "chaoss_url": "https://chaoss.community/kb/metric-licenses-declared/",
+        "is_time_based": false,
+        "value": "✗",
+        "label": "no license declared",
+        "secondary": null,
+        "headline_tone": null,
+        "unification": "Presence flag: ✓ if **SPARQL** returns ≥ 1 `schema:license` triple, ✗ otherwise.",
+        "notes": "An undeclared license isn't the same as 'no license' — it just means the metadata extractor didn't find one. Triggering enrichment may surface it.",
+        "series_unit": "events",
+        "visual": null,
+        "examples": []
+      }
+    },
+    "triact": {
+      "contributors": {
+        "bucket": "Community",
+        "repo": "agroscope-ch/triact",
+        "canonical_url": "https://github.com/agroscope-ch/triact",
+        "window_days": 3650,
+        "computed_at": "2026-08-26T15:26:02+00:00",
+        "slug": "contributors",
+        "name": "Contributors",
+        "category": "Community",
+        "chaoss_topic": "Contributor",
+        "question": "Is there a community at all?",
+        "description": "Distinct people who contributed to the repository. Computed against all three stores so the page exposes both the windowed view (OpenSearch / SPARQL) and the all-time graph view (Neo4j).",
+        "chaoss_url": "https://chaoss.community/kb/metric-contributors/",
+        "is_time_based": true,
+        "value": "3",
+        "label": "last 3650 days · OpenSearch",
+        "secondary": "Neo4j (all-time): 1 · SPARQL (windowed): 0 · OpenSearch (windowed): 3",
+        "headline_tone": null,
+        "unification": "Largest non-zero of three stores: **OpenSearch** (windowed git-cardinality) · **SPARQL** (windowed contribution graph) · **Neo4j** (all-time edges). Fallback ladder skips zeros so an empty index can't hide a real signal.",
+        "notes": "OpenSearch counts distinct ``author_uuid`` values (SortingHat-merged identities, so a person's aliases count once) on commits indexed by GrimoireLab in the window. SPARQL uses the typed ``pulse:lastContributionDate`` on the Contribution node. Neo4j is an all-time edge count — it ignores the window.",
+        "series_unit": "contributors",
+        "visual": null,
+        "examples": []
+      },
+      "new_contributors": {
+        "bucket": "Community",
+        "repo": "agroscope-ch/triact",
+        "canonical_url": "https://github.com/agroscope-ch/triact",
+        "window_days": 3650,
+        "computed_at": "2026-08-26T15:26:02+00:00",
+        "slug": "new_contributors",
+        "name": "New Contributors",
+        "category": "Community",
+        "chaoss_topic": "Contributor",
+        "question": "Is the community growing?",
+        "description": "People whose *first* contribution to this repository falls inside the chosen window. SPARQL uses the typed first-date on the Contribution node; OpenSearch computes the min commit date per author client-side.",
+        "chaoss_url": "https://chaoss.community/kb/metric-new-contributors/",
+        "is_time_based": true,
+        "value": "3",
+        "label": "last 3650 days · OpenSearch",
+        "secondary": "SPARQL: 0 · OpenSearch: 3",
+        "headline_tone": null,
+        "unification": null,
+        "notes": "A *new* contributor is one whose first contribution to this repo falls inside the window — not necessarily their first ever contribution to anything. Counts can differ between SPARQL and OpenSearch because the crawler deduplicates by GitHub login while GrimoireLab buckets by git author_name (which may include several aliases per person).",
+        "series_unit": "events",
+        "visual": null,
+        "examples": [
+          {
+            "label": "Simmler Michael",
+            "detail": "2021-06-29",
+            "source": "OpenSearch"
+          },
+          {
+            "label": "AgroSimi",
+            "detail": "2023-11-24",
+            "source": "OpenSearch"
+          },
+          {
+            "label": "michaelsimmler",
+            "detail": "2024-02-03",
+            "source": "OpenSearch"
+          }
+        ]
+      },
+      "activity_dates": {
+        "bucket": "Community",
+        "repo": "agroscope-ch/triact",
+        "canonical_url": "https://github.com/agroscope-ch/triact",
+        "window_days": 3650,
+        "computed_at": "2026-08-26T15:26:02+00:00",
+        "slug": "activity_dates",
+        "name": "Activity Dates and Times",
+        "category": "Community",
+        "chaoss_topic": "Lifecycle",
+        "question": "What is the engagement pattern?",
+        "description": "Monthly commit histogram from GrimoireLab. The card renders it as an inline sparkline so you can see steady vs bursty activity at a glance.",
+        "chaoss_url": "https://chaoss.community/kb/metric-activity-dates-and-times/",
+        "is_time_based": true,
+        "value": "245",
+        "label": "commits (last 10 years)",
+        "secondary": "busiest month: 2023-05 (44 commits)",
+        "headline_tone": null,
+        "unification": null,
+        "notes": "Date histogram on GrimoireLab's ``grimoire_creation_date`` field. Each bar = one calendar month. Bursty patterns (release-tag spikes) tell a different story from steady monthly contributions.",
+        "series_unit": "commits",
+        "visual": null,
+        "examples": []
+      },
+      "technical_fork": {
+        "bucket": "Popularity",
+        "repo": "agroscope-ch/triact",
+        "canonical_url": "https://github.com/agroscope-ch/triact",
+        "window_days": 3650,
+        "computed_at": "2026-08-26T15:26:02+00:00",
+        "slug": "technical_fork",
+        "name": "Technical Fork",
+        "category": "Popularity",
+        "chaoss_topic": "Software",
+        "question": "How often is the project being reused / developed from?",
+        "description": "Total fork count. The GitHub-reported number comes from SPARQL (latest crawl). Neo4j gives the in-graph count — the subset of those forks the crawler has actually walked.",
+        "chaoss_url": "https://chaoss.community/kb/metric-technical-fork/",
+        "is_time_based": false,
+        "value": "0",
+        "label": "forks (GitHub-reported)",
+        "secondary": "in graph: 0",
+        "headline_tone": null,
+        "unification": null,
+        "notes": "A snapshot, not a time-series. The GitHub-reported count (SPARQL) is authoritative; the Neo4j count is the subset the crawler has actually enqueued and walked.",
+        "series_unit": "events",
+        "visual": null,
+        "examples": []
+      },
+      "project_popularity": {
+        "bucket": "Popularity",
+        "repo": "agroscope-ch/triact",
+        "canonical_url": "https://github.com/agroscope-ch/triact",
+        "window_days": 3650,
+        "computed_at": "2026-08-26T15:26:03+00:00",
+        "slug": "project_popularity",
+        "name": "Project Popularity",
+        "category": "Popularity",
+        "chaoss_topic": "Software",
+        "question": "How visible is the project?",
+        "description": "Composite snapshot: stars + forks from the SPARQL store, and *dependents* from inbound DEPENDS_ON edges in Neo4j — i.e. other repositories that list this one in their package manifest.",
+        "chaoss_url": "https://chaoss.community/kb/metric-project-popularity/",
+        "is_time_based": false,
+        "value": "—",
+        "label": "no popularity signal",
+        "secondary": null,
+        "headline_tone": null,
+        "unification": null,
+        "notes": "Snapshot. Stars and forks come from the latest metadata crawl; the dependents count comes from inbound DEPENDS_ON edges resolved from package manifests (npm, pypi, cargo, go.mod, …) — only as complete as the crawl pipeline that extracted them.",
+        "series_unit": "events",
+        "visual": {
+          "kind": "stat_tiles",
+          "tiles": []
+        },
+        "examples": []
+      },
+      "licenses_declared": {
+        "bucket": "Quality",
+        "repo": "agroscope-ch/triact",
+        "canonical_url": "https://github.com/agroscope-ch/triact",
+        "window_days": 3650,
+        "computed_at": "2026-08-26T15:26:03+00:00",
+        "slug": "licenses_declared",
+        "name": "Licenses Declared",
+        "category": "Quality",
+        "chaoss_topic": "Software",
+        "question": "Is the software legally usable and reusable?",
+        "description": "Whether the repository declares one or more licenses (schema:license triple). Doesn't yet check the LICENSE file directly — that's the *License Coverage* metric (Phase 2 / would-like-to-have).",
+        "chaoss_url": "https://chaoss.community/kb/metric-licenses-declared/",
+        "is_time_based": false,
+        "value": "✗",
+        "label": "no license declared",
+        "secondary": null,
+        "headline_tone": null,
+        "unification": "Presence flag: ✓ if **SPARQL** returns ≥ 1 `schema:license` triple, ✗ otherwise.",
+        "notes": "An undeclared license isn't the same as 'no license' — it just means the metadata extractor didn't find one. Triggering enrichment may surface it.",
+        "series_unit": "events",
+        "visual": null,
+        "examples": []
+      }
+    },
+    "srppphist": {
+      "contributors": {
+        "bucket": "Community",
+        "repo": "agroscope-ch/srppphist",
+        "canonical_url": "https://github.com/agroscope-ch/srppphist",
+        "window_days": 3650,
+        "computed_at": "2026-08-26T15:26:03+00:00",
+        "slug": "contributors",
+        "name": "Contributors",
+        "category": "Community",
+        "chaoss_topic": "Contributor",
+        "question": "Is there a community at all?",
+        "description": "Distinct people who contributed to the repository. Computed against all three stores so the page exposes both the windowed view (OpenSearch / SPARQL) and the all-time graph view (Neo4j).",
+        "chaoss_url": "https://chaoss.community/kb/metric-contributors/",
+        "is_time_based": true,
+        "value": "3",
+        "label": "last 3650 days · OpenSearch",
+        "secondary": "Neo4j (all-time): 2 · SPARQL (windowed): 0 · OpenSearch (windowed): 3",
+        "headline_tone": null,
+        "unification": "Largest non-zero of three stores: **OpenSearch** (windowed git-cardinality) · **SPARQL** (windowed contribution graph) · **Neo4j** (all-time edges). Fallback ladder skips zeros so an empty index can't hide a real signal.",
+        "notes": "OpenSearch counts distinct ``author_uuid`` values (SortingHat-merged identities, so a person's aliases count once) on commits indexed by GrimoireLab in the window. SPARQL uses the typed ``pulse:lastContributionDate`` on the Contribution node. Neo4j is an all-time edge count — it ignores the window.",
+        "series_unit": "contributors",
+        "visual": null,
+        "examples": []
+      },
+      "new_contributors": {
+        "bucket": "Community",
+        "repo": "agroscope-ch/srppphist",
+        "canonical_url": "https://github.com/agroscope-ch/srppphist",
+        "window_days": 3650,
+        "computed_at": "2026-08-26T15:26:03+00:00",
+        "slug": "new_contributors",
+        "name": "New Contributors",
+        "category": "Community",
+        "chaoss_topic": "Contributor",
+        "question": "Is the community growing?",
+        "description": "People whose *first* contribution to this repository falls inside the chosen window. SPARQL uses the typed first-date on the Contribution node; OpenSearch computes the min commit date per author client-side.",
+        "chaoss_url": "https://chaoss.community/kb/metric-new-contributors/",
+        "is_time_based": true,
+        "value": "3",
+        "label": "last 3650 days · OpenSearch",
+        "secondary": "SPARQL: 0 · OpenSearch: 3",
+        "headline_tone": null,
+        "unification": null,
+        "notes": "A *new* contributor is one whose first contribution to this repo falls inside the window — not necessarily their first ever contribution to anything. Counts can differ between SPARQL and OpenSearch because the crawler deduplicates by GitHub login while GrimoireLab buckets by git author_name (which may include several aliases per person).",
+        "series_unit": "events",
+        "visual": null,
+        "examples": [
+          {
+            "label": "Johannes Ranke",
+            "detail": "2024-04-25",
+            "source": "OpenSearch"
+          },
+          {
+            "label": "Mathis Marcel",
+            "detail": "2025-04-08",
+            "source": "OpenSearch"
+          },
+          {
+            "label": "jranke",
+            "detail": "2024-10-25",
+            "source": "OpenSearch"
+          }
+        ]
+      },
+      "activity_dates": {
+        "bucket": "Community",
+        "repo": "agroscope-ch/srppphist",
+        "canonical_url": "https://github.com/agroscope-ch/srppphist",
+        "window_days": 3650,
+        "computed_at": "2026-08-26T15:26:03+00:00",
+        "slug": "activity_dates",
+        "name": "Activity Dates and Times",
+        "category": "Community",
+        "chaoss_topic": "Lifecycle",
+        "question": "What is the engagement pattern?",
+        "description": "Monthly commit histogram from GrimoireLab. The card renders it as an inline sparkline so you can see steady vs bursty activity at a glance.",
+        "chaoss_url": "https://chaoss.community/kb/metric-activity-dates-and-times/",
+        "is_time_based": true,
+        "value": "162",
+        "label": "commits (last 10 years)",
+        "secondary": "busiest month: 2025-04 (26 commits)",
+        "headline_tone": null,
+        "unification": null,
+        "notes": "Date histogram on GrimoireLab's ``grimoire_creation_date`` field. Each bar = one calendar month. Bursty patterns (release-tag spikes) tell a different story from steady monthly contributions.",
+        "series_unit": "commits",
+        "visual": null,
+        "examples": []
+      },
+      "technical_fork": {
+        "bucket": "Popularity",
+        "repo": "agroscope-ch/srppphist",
+        "canonical_url": "https://github.com/agroscope-ch/srppphist",
+        "window_days": 3650,
+        "computed_at": "2026-08-26T15:26:04+00:00",
+        "slug": "technical_fork",
+        "name": "Technical Fork",
+        "category": "Popularity",
+        "chaoss_topic": "Software",
+        "question": "How often is the project being reused / developed from?",
+        "description": "Total fork count. The GitHub-reported number comes from SPARQL (latest crawl). Neo4j gives the in-graph count — the subset of those forks the crawler has actually walked.",
+        "chaoss_url": "https://chaoss.community/kb/metric-technical-fork/",
+        "is_time_based": false,
+        "value": "0",
+        "label": "forks (GitHub-reported)",
+        "secondary": "in graph: 0",
+        "headline_tone": null,
+        "unification": null,
+        "notes": "A snapshot, not a time-series. The GitHub-reported count (SPARQL) is authoritative; the Neo4j count is the subset the crawler has actually enqueued and walked.",
+        "series_unit": "events",
+        "visual": null,
+        "examples": []
+      },
+      "project_popularity": {
+        "bucket": "Popularity",
+        "repo": "agroscope-ch/srppphist",
+        "canonical_url": "https://github.com/agroscope-ch/srppphist",
+        "window_days": 3650,
+        "computed_at": "2026-08-26T15:26:04+00:00",
+        "slug": "project_popularity",
+        "name": "Project Popularity",
+        "category": "Popularity",
+        "chaoss_topic": "Software",
+        "question": "How visible is the project?",
+        "description": "Composite snapshot: stars + forks from the SPARQL store, and *dependents* from inbound DEPENDS_ON edges in Neo4j — i.e. other repositories that list this one in their package manifest.",
+        "chaoss_url": "https://chaoss.community/kb/metric-project-popularity/",
+        "is_time_based": false,
+        "value": "—",
+        "label": "no popularity signal",
+        "secondary": null,
+        "headline_tone": null,
+        "unification": null,
+        "notes": "Snapshot. Stars and forks come from the latest metadata crawl; the dependents count comes from inbound DEPENDS_ON edges resolved from package manifests (npm, pypi, cargo, go.mod, …) — only as complete as the crawl pipeline that extracted them.",
+        "series_unit": "events",
+        "visual": {
+          "kind": "stat_tiles",
+          "tiles": []
+        },
+        "examples": []
+      },
+      "licenses_declared": {
+        "bucket": "Quality",
+        "repo": "agroscope-ch/srppphist",
+        "canonical_url": "https://github.com/agroscope-ch/srppphist",
+        "window_days": 3650,
+        "computed_at": "2026-08-26T15:26:04+00:00",
+        "slug": "licenses_declared",
+        "name": "Licenses Declared",
+        "category": "Quality",
+        "chaoss_topic": "Software",
+        "question": "Is the software legally usable and reusable?",
+        "description": "Whether the repository declares one or more licenses (schema:license triple). Doesn't yet check the LICENSE file directly — that's the *License Coverage* metric (Phase 2 / would-like-to-have).",
+        "chaoss_url": "https://chaoss.community/kb/metric-licenses-declared/",
+        "is_time_based": false,
+        "value": "✗",
+        "label": "no license declared",
+        "secondary": null,
+        "headline_tone": null,
+        "unification": "Presence flag: ✓ if **SPARQL** returns ≥ 1 `schema:license` triple, ✗ otherwise.",
+        "notes": "An undeclared license isn't the same as 'no license' — it just means the metadata extractor didn't find one. Triggering enrichment may surface it.",
+        "series_unit": "events",
+        "visual": null,
+        "examples": []
+      }
+    },
+    "plasmopy": {
+      "contributors": {
+        "bucket": "Community",
+        "repo": "agroscope-ch/plasmopy",
+        "canonical_url": "https://github.com/agroscope-ch/plasmopy",
+        "window_days": 3650,
+        "computed_at": "2026-08-26T15:26:04+00:00",
+        "slug": "contributors",
+        "name": "Contributors",
+        "category": "Community",
+        "chaoss_topic": "Contributor",
+        "question": "Is there a community at all?",
+        "description": "Distinct people who contributed to the repository. Computed against all three stores so the page exposes both the windowed view (OpenSearch / SPARQL) and the all-time graph view (Neo4j).",
+        "chaoss_url": "https://chaoss.community/kb/metric-contributors/",
+        "is_time_based": true,
+        "value": "3",
+        "label": "last 3650 days · OpenSearch",
+        "secondary": "Neo4j (all-time): 1 · SPARQL (windowed): 0 · OpenSearch (windowed): 3",
+        "headline_tone": null,
+        "unification": "Largest non-zero of three stores: **OpenSearch** (windowed git-cardinality) · **SPARQL** (windowed contribution graph) · **Neo4j** (all-time edges). Fallback ladder skips zeros so an empty index can't hide a real signal.",
+        "notes": "OpenSearch counts distinct ``author_uuid`` values (SortingHat-merged identities, so a person's aliases count once) on commits indexed by GrimoireLab in the window. SPARQL uses the typed ``pulse:lastContributionDate`` on the Contribution node. Neo4j is an all-time edge count — it ignores the window.",
+        "series_unit": "contributors",
+        "visual": null,
+        "examples": []
+      },
+      "new_contributors": {
+        "bucket": "Community",
+        "repo": "agroscope-ch/plasmopy",
+        "canonical_url": "https://github.com/agroscope-ch/plasmopy",
+        "window_days": 3650,
+        "computed_at": "2026-08-26T15:26:04+00:00",
+        "slug": "new_contributors",
+        "name": "New Contributors",
+        "category": "Community",
+        "chaoss_topic": "Contributor",
+        "question": "Is the community growing?",
+        "description": "People whose *first* contribution to this repository falls inside the chosen window. SPARQL uses the typed first-date on the Contribution node; OpenSearch computes the min commit date per author client-side.",
+        "chaoss_url": "https://chaoss.community/kb/metric-new-contributors/",
+        "is_time_based": true,
+        "value": "3",
+        "label": "last 3650 days · OpenSearch",
+        "secondary": "SPARQL: 0 · OpenSearch: 3",
+        "headline_tone": null,
+        "unification": null,
+        "notes": "A *new* contributor is one whose first contribution to this repo falls inside the window — not necessarily their first ever contribution to anything. Counts can differ between SPARQL and OpenSearch because the crawler deduplicates by GitHub login while GrimoireLab buckets by git author_name (which may include several aliases per person).",
+        "series_unit": "events",
+        "visual": null,
+        "examples": [
+          {
+            "label": "Livio Ruzzante",
+            "detail": "2025-07-09",
+            "source": "OpenSearch"
+          },
+          {
+            "label": "lruzzant",
+            "detail": "2025-07-23",
+            "source": "OpenSearch"
+          },
+          {
+            "label": "Ruzzante Livio",
+            "detail": "2025-11-12",
+            "source": "OpenSearch"
+          }
+        ]
+      },
+      "activity_dates": {
+        "bucket": "Community",
+        "repo": "agroscope-ch/plasmopy",
+        "canonical_url": "https://github.com/agroscope-ch/plasmopy",
+        "window_days": 3650,
+        "computed_at": "2026-08-26T15:26:04+00:00",
+        "slug": "activity_dates",
+        "name": "Activity Dates and Times",
+        "category": "Community",
+        "chaoss_topic": "Lifecycle",
+        "question": "What is the engagement pattern?",
+        "description": "Monthly commit histogram from GrimoireLab. The card renders it as an inline sparkline so you can see steady vs bursty activity at a glance.",
+        "chaoss_url": "https://chaoss.community/kb/metric-activity-dates-and-times/",
+        "is_time_based": true,
+        "value": "88",
+        "label": "commits (last 10 years)",
+        "secondary": "busiest month: 2026-03 (30 commits)",
+        "headline_tone": null,
+        "unification": null,
+        "notes": "Date histogram on GrimoireLab's ``grimoire_creation_date`` field. Each bar = one calendar month. Bursty patterns (release-tag spikes) tell a different story from steady monthly contributions.",
+        "series_unit": "commits",
+        "visual": null,
+        "examples": []
+      },
+      "technical_fork": {
+        "bucket": "Popularity",
+        "repo": "agroscope-ch/plasmopy",
+        "canonical_url": "https://github.com/agroscope-ch/plasmopy",
+        "window_days": 3650,
+        "computed_at": "2026-08-26T15:26:05+00:00",
+        "slug": "technical_fork",
+        "name": "Technical Fork",
+        "category": "Popularity",
+        "chaoss_topic": "Software",
+        "question": "How often is the project being reused / developed from?",
+        "description": "Total fork count. The GitHub-reported number comes from SPARQL (latest crawl). Neo4j gives the in-graph count — the subset of those forks the crawler has actually walked.",
+        "chaoss_url": "https://chaoss.community/kb/metric-technical-fork/",
+        "is_time_based": false,
+        "value": "0",
+        "label": "forks (GitHub-reported)",
+        "secondary": "in graph: 0",
+        "headline_tone": null,
+        "unification": null,
+        "notes": "A snapshot, not a time-series. The GitHub-reported count (SPARQL) is authoritative; the Neo4j count is the subset the crawler has actually enqueued and walked.",
+        "series_unit": "events",
+        "visual": null,
+        "examples": []
+      },
+      "project_popularity": {
+        "bucket": "Popularity",
+        "repo": "agroscope-ch/plasmopy",
+        "canonical_url": "https://github.com/agroscope-ch/plasmopy",
+        "window_days": 3650,
+        "computed_at": "2026-08-26T15:26:05+00:00",
+        "slug": "project_popularity",
+        "name": "Project Popularity",
+        "category": "Popularity",
+        "chaoss_topic": "Software",
+        "question": "How visible is the project?",
+        "description": "Composite snapshot: stars + forks from the SPARQL store, and *dependents* from inbound DEPENDS_ON edges in Neo4j — i.e. other repositories that list this one in their package manifest.",
+        "chaoss_url": "https://chaoss.community/kb/metric-project-popularity/",
+        "is_time_based": false,
+        "value": "—",
+        "label": "no popularity signal",
+        "secondary": null,
+        "headline_tone": null,
+        "unification": null,
+        "notes": "Snapshot. Stars and forks come from the latest metadata crawl; the dependents count comes from inbound DEPENDS_ON edges resolved from package manifests (npm, pypi, cargo, go.mod, …) — only as complete as the crawl pipeline that extracted them.",
+        "series_unit": "events",
+        "visual": {
+          "kind": "stat_tiles",
+          "tiles": []
+        },
+        "examples": []
+      },
+      "licenses_declared": {
+        "bucket": "Quality",
+        "repo": "agroscope-ch/plasmopy",
+        "canonical_url": "https://github.com/agroscope-ch/plasmopy",
+        "window_days": 3650,
+        "computed_at": "2026-08-26T15:26:05+00:00",
+        "slug": "licenses_declared",
+        "name": "Licenses Declared",
+        "category": "Quality",
+        "chaoss_topic": "Software",
+        "question": "Is the software legally usable and reusable?",
+        "description": "Whether the repository declares one or more licenses (schema:license triple). Doesn't yet check the LICENSE file directly — that's the *License Coverage* metric (Phase 2 / would-like-to-have).",
+        "chaoss_url": "https://chaoss.community/kb/metric-licenses-declared/",
+        "is_time_based": false,
+        "value": "✗",
+        "label": "no license declared",
+        "secondary": null,
+        "headline_tone": null,
+        "unification": "Presence flag: ✓ if **SPARQL** returns ≥ 1 `schema:license` triple, ✗ otherwise.",
+        "notes": "An undeclared license isn't the same as 'no license' — it just means the metadata extractor didn't find one. Triggering enrichment may surface it.",
+        "series_unit": "events",
+        "visual": null,
+        "examples": []
+      }
+    },
+    "derappp": {
+      "contributors": {
+        "bucket": "Community",
+        "repo": "agroscope-ch/derappp",
+        "canonical_url": "https://github.com/agroscope-ch/derappp",
+        "window_days": 3650,
+        "computed_at": "2026-08-26T15:26:05+00:00",
+        "slug": "contributors",
+        "name": "Contributors",
+        "category": "Community",
+        "chaoss_topic": "Contributor",
+        "question": "Is there a community at all?",
+        "description": "Distinct people who contributed to the repository. Computed against all three stores so the page exposes both the windowed view (OpenSearch / SPARQL) and the all-time graph view (Neo4j).",
+        "chaoss_url": "https://chaoss.community/kb/metric-contributors/",
+        "is_time_based": true,
+        "value": "3",
+        "label": "last 3650 days · OpenSearch",
+        "secondary": "Neo4j (all-time): 2 · SPARQL (windowed): 0 · OpenSearch (windowed): 3",
+        "headline_tone": null,
+        "unification": "Largest non-zero of three stores: **OpenSearch** (windowed git-cardinality) · **SPARQL** (windowed contribution graph) · **Neo4j** (all-time edges). Fallback ladder skips zeros so an empty index can't hide a real signal.",
+        "notes": "OpenSearch counts distinct ``author_uuid`` values (SortingHat-merged identities, so a person's aliases count once) on commits indexed by GrimoireLab in the window. SPARQL uses the typed ``pulse:lastContributionDate`` on the Contribution node. Neo4j is an all-time edge count — it ignores the window.",
+        "series_unit": "contributors",
+        "visual": null,
+        "examples": []
+      },
+      "new_contributors": {
+        "bucket": "Community",
+        "repo": "agroscope-ch/derappp",
+        "canonical_url": "https://github.com/agroscope-ch/derappp",
+        "window_days": 3650,
+        "computed_at": "2026-08-26T15:26:05+00:00",
+        "slug": "new_contributors",
+        "name": "New Contributors",
+        "category": "Community",
+        "chaoss_topic": "Contributor",
+        "question": "Is the community growing?",
+        "description": "People whose *first* contribution to this repository falls inside the chosen window. SPARQL uses the typed first-date on the Contribution node; OpenSearch computes the min commit date per author client-side.",
+        "chaoss_url": "https://chaoss.community/kb/metric-new-contributors/",
+        "is_time_based": true,
+        "value": "3",
+        "label": "last 3650 days · OpenSearch",
+        "secondary": "SPARQL: 0 · OpenSearch: 3",
+        "headline_tone": null,
+        "unification": null,
+        "notes": "A *new* contributor is one whose first contribution to this repo falls inside the window — not necessarily their first ever contribution to anything. Counts can differ between SPARQL and OpenSearch because the crawler deduplicates by GitHub login while GrimoireLab buckets by git author_name (which may include several aliases per person).",
+        "series_unit": "events",
+        "visual": null,
+        "examples": [
+          {
+            "label": "Johannes Ranke",
+            "detail": "2026-06-25",
+            "source": "OpenSearch"
+          },
+          {
+            "label": "Lutzeli",
+            "detail": "2026-08-24",
+            "source": "OpenSearch"
+          },
+          {
+            "label": "Marcel Mathis",
+            "detail": "2026-07-30",
+            "source": "OpenSearch"
+          }
+        ]
+      },
+      "activity_dates": {
+        "bucket": "Community",
+        "repo": "agroscope-ch/derappp",
+        "canonical_url": "https://github.com/agroscope-ch/derappp",
+        "window_days": 3650,
+        "computed_at": "2026-08-26T15:26:06+00:00",
+        "slug": "activity_dates",
+        "name": "Activity Dates and Times",
+        "category": "Community",
+        "chaoss_topic": "Lifecycle",
+        "question": "What is the engagement pattern?",
+        "description": "Monthly commit histogram from GrimoireLab. The card renders it as an inline sparkline so you can see steady vs bursty activity at a glance.",
+        "chaoss_url": "https://chaoss.community/kb/metric-activity-dates-and-times/",
+        "is_time_based": true,
+        "value": "75",
+        "label": "commits (last 10 years)",
+        "secondary": "busiest month: 2026-07 (68 commits)",
+        "headline_tone": null,
+        "unification": null,
+        "notes": "Date histogram on GrimoireLab's ``grimoire_creation_date`` field. Each bar = one calendar month. Bursty patterns (release-tag spikes) tell a different story from steady monthly contributions.",
+        "series_unit": "commits",
+        "visual": null,
+        "examples": []
+      },
+      "technical_fork": {
+        "bucket": "Popularity",
+        "repo": "agroscope-ch/derappp",
+        "canonical_url": "https://github.com/agroscope-ch/derappp",
+        "window_days": 3650,
+        "computed_at": "2026-08-26T15:26:06+00:00",
+        "slug": "technical_fork",
+        "name": "Technical Fork",
+        "category": "Popularity",
+        "chaoss_topic": "Software",
+        "question": "How often is the project being reused / developed from?",
+        "description": "Total fork count. The GitHub-reported number comes from SPARQL (latest crawl). Neo4j gives the in-graph count — the subset of those forks the crawler has actually walked.",
+        "chaoss_url": "https://chaoss.community/kb/metric-technical-fork/",
+        "is_time_based": false,
+        "value": "0",
+        "label": "forks (GitHub-reported)",
+        "secondary": "in graph: 0",
+        "headline_tone": null,
+        "unification": null,
+        "notes": "A snapshot, not a time-series. The GitHub-reported count (SPARQL) is authoritative; the Neo4j count is the subset the crawler has actually enqueued and walked.",
+        "series_unit": "events",
+        "visual": null,
+        "examples": []
+      },
+      "project_popularity": {
+        "bucket": "Popularity",
+        "repo": "agroscope-ch/derappp",
+        "canonical_url": "https://github.com/agroscope-ch/derappp",
+        "window_days": 3650,
+        "computed_at": "2026-08-26T15:26:06+00:00",
+        "slug": "project_popularity",
+        "name": "Project Popularity",
+        "category": "Popularity",
+        "chaoss_topic": "Software",
+        "question": "How visible is the project?",
+        "description": "Composite snapshot: stars + forks from the SPARQL store, and *dependents* from inbound DEPENDS_ON edges in Neo4j — i.e. other repositories that list this one in their package manifest.",
+        "chaoss_url": "https://chaoss.community/kb/metric-project-popularity/",
+        "is_time_based": false,
+        "value": "—",
+        "label": "no popularity signal",
+        "secondary": null,
+        "headline_tone": null,
+        "unification": null,
+        "notes": "Snapshot. Stars and forks come from the latest metadata crawl; the dependents count comes from inbound DEPENDS_ON edges resolved from package manifests (npm, pypi, cargo, go.mod, …) — only as complete as the crawl pipeline that extracted them.",
+        "series_unit": "events",
+        "visual": {
+          "kind": "stat_tiles",
+          "tiles": []
+        },
+        "examples": []
+      },
+      "licenses_declared": {
+        "bucket": "Quality",
+        "repo": "agroscope-ch/derappp",
+        "canonical_url": "https://github.com/agroscope-ch/derappp",
+        "window_days": 3650,
+        "computed_at": "2026-08-26T15:26:06+00:00",
+        "slug": "licenses_declared",
+        "name": "Licenses Declared",
+        "category": "Quality",
+        "chaoss_topic": "Software",
+        "question": "Is the software legally usable and reusable?",
+        "description": "Whether the repository declares one or more licenses (schema:license triple). Doesn't yet check the LICENSE file directly — that's the *License Coverage* metric (Phase 2 / would-like-to-have).",
+        "chaoss_url": "https://chaoss.community/kb/metric-licenses-declared/",
+        "is_time_based": false,
+        "value": "✗",
+        "label": "no license declared",
+        "secondary": null,
+        "headline_tone": null,
+        "unification": "Presence flag: ✓ if **SPARQL** returns ≥ 1 `schema:license` triple, ✗ otherwise.",
+        "notes": "An undeclared license isn't the same as 'no license' — it just means the metadata extractor didn't find one. Triggering enrichment may surface it.",
+        "series_unit": "events",
+        "visual": null,
+        "examples": []
+      }
+    }
+  }
+}

@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Agroscope Open Source — at a glance</title>
+  <meta name="description" content="The open-source story of Agroscope, built on the Open Pulse platform." />
+</head>
+<body>
+  <div class="op-attribution">
+    <div class="wrap">
+      Built using <a href="https://openpulse.science" target="_blank" rel="noopener">openpulse.science</a> at
+      <span class="mono" data-build-timestamp></span>
+    </div>
+  </div>
+
+  <header class="op-header">
+    <div class="wrap">
+      <a href="index.html" class="op-logo"><span class="dot"></span>Agroscope <span class="faint">Open Source</span></a>
+      <nav class="op-nav">
+        <a href="index.html">Overview</a>
+        <a href="landscape.html">Landscape</a>
+        <a href="community.html">Community</a>
+        <a href="health.html">Health</a>
+        <a href="impact.html">Impact</a>
+        <a href="coverage.html">What's missing</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="op-hero">
+      <div class="wrap">
+        <p class="kicker">Agroscope on Open Pulse</p>
+        <h1>Agroscope's open source, at a glance</h1>
+        <p class="lede" id="lede">Loading…</p>
+        <div class="stat-grid" id="stat-grid"></div>
+        <div id="stat-provenance"></div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="wrap">
+        <div class="op-label"><span class="glyph">〇</span><span class="text">Signature visual</span></div>
+        <h2>What Agroscope builds, by discipline</h2>
+        <p class="muted mt-16" style="max-width:640px">
+          Every repository classified by research discipline (Wikidata-resolved), sized by repository count.
+          Agroscope's software spans far beyond agricultural science — statistics, biology and applied
+          engineering all show up here. Click a block to jump to the filtered catalogue.
+        </p>
+        <div id="treemap" class="op-treemap mt-24" style="height:360px"></div>
+        <div id="treemap-provenance"></div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="wrap">
+        <div class="op-label"><span class="glyph">〇</span><span class="text">Highlights</span></div>
+        <h2>Reading the numbers</h2>
+        <div class="grid-3 mt-24" id="highlights"></div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="op-footer">
+    <div class="wrap">
+      <div class="op-footer-top">
+        <div class="op-footer-desc">
+          This dashboard tells the open-source story of Agroscope
+          (<span class="mono">github.com/agroscope-ch</span>), built on the Open Pulse platform. Data is
+          snapshotted at build time from Neo4j, SPARQL, OpenSearch and the CHAOSS metrics API — the browser
+          never queries those stores directly.
+        </div>
+        <div class="op-footer-links">
+          <a href="https://github.com/agroscope-ch" target="_blank" rel="noopener">GitHub org →</a>
+          <a href="https://ror.org/04d8ztx87" target="_blank" rel="noopener">ROR record →</a>
+          <a href="https://openpulse.science" target="_blank" rel="noopener">Open Pulse →</a>
+        </div>
+      </div>
+      <div class="op-footer-bottom">Agroscope Open Source Dashboard — built with pulseWebKit.</div>
+    </div>
+  </footer>
+
+  <script type="module" src="/src/js/main.js"></script>
+  <script type="module" src="/src/js/landing.js"></script>
+</body>
+</html>

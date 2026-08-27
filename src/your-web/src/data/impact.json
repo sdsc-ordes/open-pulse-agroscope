@@ -1,0 +1,16 @@
+{
+  "fetchedAt": "2026-08-26T15:25:58.905Z",
+  "scope": {
+    "org": "agroscope-ch",
+    "orgUrl": "https://github.com/agroscope-ch",
+    "ror": "https://ror.org/04d8ztx87",
+    "rorName": "Agroscope"
+  },
+  "funnel": {
+    "repositories": 20,
+    "withLicense": 8,
+    "withContributorsIdentified": 20,
+    "publicationLinksResolved": 0
+  },
+  "note": "No publication links currently resolve from any Agroscope repository to a scholarly record (checked schema:sourceOrganization against the Agroscope ROR across the SPARQL graph, plus a full-text \"agroscope\" search across Zenodo and Infoscience collections — zero matches). This is an identifier-coverage gap upstream (ORCID / CITATION.cff / DOI linkage), not a dashboard limitation."
+}

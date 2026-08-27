@@ -1,0 +1,20 @@
+{
+  "name": "agroscope-open-source-dashboard",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "fetch-data": "node scripts/fetch-data.mjs",
+    "dev": "vite --port 5173",
+    "build": "vite build",
+    "preview": "vite preview --port 4173"
+  },
+  "dependencies": {
+    "@carrot-kpi/switzer-font": "^0.1.0",
+    "@fontsource-variable/space-grotesk": "^5.1.0",
+    "@fontsource/jetbrains-mono": "^5.1.0",
+    "d3": "^7.9.0"
+  },
+  "devDependencies": {
+    "vite": "^5.4.0"
+  }
+}
